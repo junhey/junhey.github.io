@@ -71,8 +71,3 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
-
-
-plugins: #插件，例如生成 RSS 和站点地图的
-- hexo-generator-feed
-- hexo-generator-sitemap
