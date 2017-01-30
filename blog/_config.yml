@@ -6,16 +6,18 @@
 title: Junhey
 subtitle: 疯狂的迈步
 description: 
-author: 
-language:
-timezone:
+author: junhey
+email: junhey@qq.com
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://junhey.com
 root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+#permalink: :year/:month/:day/:title/
+permalink: posts/title.html
+permalink_defaults: 
 
 # Directory
 source_dir: source
@@ -69,3 +71,8 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+
+plugins: #插件，例如生成 RSS 和站点地图的
+- hexo-generator-feed
+- hexo-generator-sitemap
