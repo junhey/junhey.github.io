@@ -66,10 +66,6 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
-exclude_generator:
-plugins:
-- hexo-generator-feed
-- hexo-generator-sitemap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
