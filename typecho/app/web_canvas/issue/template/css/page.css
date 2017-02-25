@@ -1,0 +1,21 @@
+@charset "utf-8";
+.pztR{position:relative;}
+.pztA{position:absolute;}
+.pztF{position:fixed;}
+.ulLiInit{margin:0;padding:0;list-style:none;}
+.container{}
+.top{height:80px;background:#5b9bd5;}
+.topTit{width:50%;height:80px;line-height:80px;font-size:36px;left:0;color:#FFF;text-align:right;}
+.loginBar{width:140px;height:30px;right:10%;}
+ul.loginBarUl{width:140px;}
+li.loginBarLi{width:68px;height:29px;line-height:29px;float:left;text-align:center;border-bottom:1px solid #c8c8c8;border-left:1px solid #c8c8c8;border-right:1px solid #c8c8c8;}
+li.loginBarLi a{color:#fff;}
+.main,.main .canvasArea,.main .canvasTools{height:500px;}
+.main .canvasArea,.main .canvasTools{float:left;}
+.main{margin:10px auto;border:1px solid #b5c6e7;border-right:none;}
+.main .canvasArea{width:70%;}
+.main .canvasTools{width:28%;margin:0 0 0 2%;background:#b5c6e7;}
+.canvasCircle{padding:5%;}
+.resourceArea{height:150px;overflow-y:auto;background:#ededed;}
+#ctlCreateCircle{display:none;}
+.msg{color:#F00;font-weight:bold;}

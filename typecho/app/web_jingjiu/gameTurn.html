@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>走进全国知名保健酒基地</title>
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<style type="text/css">
+       li
+        {
+            margin-right: 20px;
+            width: 225px;
+            height: 180px;
+            float: left;
+            position: relative;
+            display: block;
+            -webkit-perspective: 800px;
+            -moz-perspective: 800px;
+        }
+
+  
+        li > div
+        {
+            position: absolute;
+            left: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -webkit-transition: .8s ease-in-out ;
+            -moz-transition:  .8s ease-in-out ;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+        }
+
+        li  div:last-child
+        {
+           
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            z-index: 1;
+        }
+    </style>
+<script type="text/javascript" src="js/lib/jquery1.11.1.min.js"></script>
+<script type="text/javascript">
+
+function Drink(imgUrl){
+	this.img = imgUrl;
+	var self = this;
+	var state = "face";
+	this.drinkSerialization=function(){
+		return "<li class=\"gridItem fltL\"><div class=\"drinkFaceBox\"><img src=\""+self.img+"\" class=\" wAll hAll\"/></div><div class=\"drinkBgBox\" style=\"background:#fff\"></div></li>";
+	}
+	
+	var entity = $(this.drinkSerialization());
+	/*
+	var face = entity.find(".drinkFaceBox");
+	var butt =entity.find(".drinkBgBox");
+	
+
+	face.click(function(){
+		alert(1);
+		this.toButt();
+	});
+	
+	butt.click(function(){
+		this.toFace();
+	});
+	
+	this.getFace = function(){
+		return face;
+	}
+	
+	this.getButt = function(){
+		return butt;
+	}
+	*/
+
+	this.face;
+	this.butt;
+
+	this.getFace = function(){
+		return face;
+	}
+	
+	this.getButt = function(){
+		return butt;
+	}
+
+	this.setFace = function(_face){
+		this.face = _face;
+	}
+
+	this.setButt = function(_butt){
+		this.butt = _butt;
+	}
+
+	this.equals=function(drink){
+		if(drink.getImg()==self.getImg()){
+			return true;
+		}
+		return false;
+	}
+	this.getImg=function(){
+		return this.img;
+	}
+	
+	this.getState = function(){
+		return state;
+	}
+	
+	this.setState = function(_state){
+		if(!(_state=="face" || _state=="butt")){
+			return;
+		}
+		state = _state;
+		self.rotateY();
+	}
+	
+	this.rotateY = function(){
+		if(state=="face"){
+			face.css("webkitTransform","rotateY(180deg)");
+			butt.css("webkitTransform","rotateY(0)");
+			state = "butt";
+		}else if(state=="butt"){
+			butt.css("webkitTransform","rotateY(180deg)");
+			face.css("webkitTransform","rotateY(0)");
+			state = "face";
+		}
+	}
+	
+	this.toFace = function() {
+		if(state=="butt"){
+			this.butt.css("webkitTransform","rotateY(180deg)");
+			this.face.css("webkitTransform","rotateY(0)");
+			state = "face";
+		}
+	}
+	
+	
+	this.toButt=function(){
+		if(state=="face"){
+			this.face.css("webkitTransform","rotateY(180deg)");
+			this.butt.css("webkitTransform","rotateY(0)");
+			state = "butt";
+		}
+	}
+	
+}
+
+var imgArr = [
+	"resource/imgs/wine1.png",
+	"resource/imgs/wine2.png",
+	"resource/imgs/wine3.png",
+];
+var drinkList=Array();
+var drinkFirst="";
+var drinkSecond="";
+var isEquals = false;
+var gameOver = false;
+
+function initDrink(){
+	var drinkFactory = new DrinkFactory();
+	for(var i=0;i<16;i++){
+		var drink = drinkFactory.createDrink();
+		drinkList.push(drink);
+	}
+}
+function addDrink2Box(){
+	allDrinkHandler(function(drink){
+		var drinkEntity = $(drink.drinkSerialization());
+		var face = drinkEntity.find(".drinkFaceBox");
+		var butt =drinkEntity.find(".drinkBgBox");
+		drink.setFace(face);
+		drink.setButt(butt);
+		
+		butt.click(function(){
+			if(gameOver){return;}
+			if(drinkFirst!="" && drinkSecond!=""){
+				return;
+			}
+			drink.toFace();
+			if(drinkFirst==""){
+				drinkFirst = drink;
+				return;
+			}else if(drinkSecond==""&&drinkFirst!=drink){
+				drinkSecond = drink;
+				setTimeout(function(){
+					drinkCheck();
+				},1000);
+			}
+		});
+	
+		
+		$(".gridBox ul").append(drinkEntity);
+	});
+}
+
+function allDrinkHandler(handler){
+	if(drinkList.length<1){
+		return;
+	}
+	
+	for(var i=0;i<drinkList.length;i++){
+		var drinkTemp = drinkList[i];
+		handler(drinkTemp);
+	}
+}
+
+function drinkCheck(){
+	if(drinkFirst.equals(drinkSecond)){
+		popupOpen();
+		gameOver = true;
+	}else{
+		drinkFirst.toButt();
+		drinkSecond.toButt();
+	}
+	drinkFirst = "";
+	drinkSecond= "";
+}
+
+function DrinkFactory(){
+	this.createDrink= function(){
+		var num = Math.floor(Math.random()*100) %3;
+		return new Drink(imgArr[num]);
+	}
+}
+
+function popupOpen(){
+	$("#popup").show();
+}
+
+function popupClose(){
+	$("#popup").hide();
+}
+
+function popupInit(){
+	popupClose();
+	$(".close").click(function(){
+		popupClose();
+		window.location.reload();
+	});
+}
+
+$(function(){
+	popupInit();
+	initDrink();
+	addDrink2Box();	
+	setTimeout(function(){
+		allDrinkHandler(function(drink){
+			drink.toButt();
+		});
+	},2000);
+});
+
+</script>
+</head>
+<body>
+<div class="main gameTurn wAll bgInitAll pztA">
+		<div class="gridBox pztA">
+    		<ul class=" hAll wAll clear"></ul>
+		</div>
+		<div class="popup pztA" id="popup">
+				<div class="popupTop bgInitAll">
+						<div class="close fltR"></div>
+				</div>
+				<div class="popupCen">
+						<div class=" fntsz14">恭喜你，完成劲酒体验之旅。赶紧和朋友一起分享，抽取活动礼品吧。</div>
+								<div class="play share bgInitAll txtcnt"><a href="info.html">分享并抽奖</a></div>
+						</div>
+				</div>
+		</div>
+<footer class="foot wAll pztA">
+		<div class="fntsz22 footHint wAll txtcnt">请记住以上图标所在位置</div>
+</footer>
+</body>
+</html>

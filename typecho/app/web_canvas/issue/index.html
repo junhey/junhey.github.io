@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvas画板</title>
+<link rel="stylesheet" href="template/css/bootstrap.min.css">
+<link rel="stylesheet" href="template/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="template/css/page.css">
+<script src="template/js/paper.js"></script>
+<script src="template/js/jquery-2.1.0.min.js"></script>
+<script src="template/js/bootstrap.min.js"></script>
+<script src="template/js/graphic-fun-min.js"></script>
+<script src="template/js/handler-min.js" type="text/paperscript" canvas="canvas"></script>
+</head>
+<body>
+<div class="container">
+	<div class="top pztR">
+		<div class="topTit pztA">标题区</div>
+		<div class="loginBar pztA">
+			<ul class="loginBarUl ulLiInit clearfix">
+				<li class="loginBarLi ulLiInit"><a href="#">登录</a></li>
+				<li class="loginBarLi ulLiInit"><a href="#">帮助</a></li>
+			</ul>
+		</div>	
+	</div>
+	<div class="main clearfix">
+		<div class="canvasArea">
+			<div class="canvas" id="canvasWrap"><canvas width="100%" height="500" id="canvas"></canvas></div>
+		</div>
+		<div class="canvasTools">
+			<div class="canvasCircle">
+				<button type="submit" name="creatCircle" id="btnCreatCircle" class="btn btn-info btn-lg btn-block">打开圆形图案创建面板</button>
+				<div id="ctlCreateCircle">
+					<div class="form-group">
+					    <label for="scale">缩放比例：<span id="showScale" class="badge msg">0.5</span></label>
+						<input type="range" name="scale" id="btnScale" max="1" min="0.1" value="0.5" step="0.01" />
+					</div>
+					<div class="form-group">
+					    <label for="scale">旋转角度：<span id="showDegree" class="badge msg">0</span></label>
+						<input type="range" name="degree" id="btnDegree" max="360" min="0" value="0" step="1" />
+					</div>
+					<div class="form-group">
+					    <label for="x">x坐标：<span id="showX" class="badge msg">400</span></label>
+						<input type="range" name="x" id="x" max="600" min="0" value="400" step="1" />
+					</div>
+					<div class="form-group">
+					    <label for="y">y坐标：<span id="showY" class="badge msg">250</span></label>
+						<input type="range" name="y" id="y" max="500" min="0" value="250" step="1" />
+					</div>
+					<div class="form-group">
+					    <label for="r">r半径：<span id="showR" class="badge msg">150</span></label>
+						<input type="range" name="r" id="r" max="200" min="0" value="150" step="1" />
+					</div>
+					<div class="form-group">
+					    <label for="num">图形数量：<span id="showNum" class="badge msg">4</span></label>
+						<input type="range" value="4" max="10" min="1" name="num" id="btnNum" >
+					</div>					
+					<button type="button" name="creatCircleAction" id="btnCreatCircleAction" class="btn btn-primary btn-lg btn-block">创建</button>
+					<button type="button" name="saveCircleAction" id="btnSaveCircleAction" class="btn btn-success btn-lg btn-block">保存</button>
+					<button type="button" name="clearCircleAction" id="btnClearCircleAction" class="btn btn-danger btn-lg btn-block">清空</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="resourceArea"></div>
+</div>
+</body>
+</html>

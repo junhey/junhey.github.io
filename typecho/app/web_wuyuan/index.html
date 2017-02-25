@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link rel="icon" href="images/favicon.ico" />
+<link href="style/base.css" rel="stylesheet" type="text/css" />
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jQuery.1.9.1.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.slides.js"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/unitpngfix.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="header">
+		<div class="nav clr">
+				<div class="l_nav clr">
+						<ul>
+								<li><a href="index.html">首页</a></li>
+								<li> <a href="about.html">关于</a></li>
+								<li><a href="gallery.html">画廊</a></li>
+						</ul>
+				</div>
+				<div class="top_logo"><a href="#"><img  src="images/logo.gif" alt="婺源" /></a></div>
+				<div class="r_nav clr">
+						<ul>
+								<li><a href="journey.html">旅行</a></li>
+								<li><a href="blog.html">博客</a></li>
+								<li><a href="contacts.html">联系我们</a></li>
+						</ul>
+				</div>
+		</div>
+</div>
+<div class="main">
+		<div class="content">
+				<div class="focus_pic" id="slides"> <img src="images/index_1.jpg" title="" alt="1" /> <img src="images/index_2.jpg" title="" alt="2" /> <img src="images/index_3.jpg" title="" alt="3" /> <img src="images/index_4.jpg" title="" alt="2" /> </div>
+				<script type="text/javascript">
+    $(function(){		
+      $("#slides").slidesjs({
+        width: 932,
+        height: 675,
+		play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true,
+          pauseOnHover: true,
+          restartDelay: 2500
+        }
+      });
+    });
+  </script>
+				<div class="destinations">
+						<div class="d_text">
+								<h1>热门旅游目的地</h1>
+						</div>
+						<div class="d_img">
+								<ul >
+										<li class="clr">
+												<div class="pic"> <a href="#"><img src="images/index_t_1.jpg" width="300" height="280" class="pic-image" alt="#" /></a> <span class="pic-caption left-to-right"> <a class="tie_a">婺源江岭</a> <a class="tie_p">层层梯田，曲折线条，山谷盆地中的小河，河边聚集着村庄，四周围绕着青山，构成一副极美的风光画卷。</a> </span> </div>
+										</li>
+										<li class="clr">
+												<div class="pic"> <a href="#"><img src="images/index_t_2.jpg" width="300" height="280" class="pic-image" alt="#"/></a> <span class="pic-caption left-to-right"> <a class="tie_a">大鄣山卧龙谷</a> <a class="tie_p">一幅天然泼墨山水画，一处都市人魂牵梦萦的乐土圣境。</a> </span> </div>
+										</li>
+										<li class="clr">
+												<div class="pic"> <a href="#"><img src="images/index_t_3.jpg" width="300" height="280" class="pic-image" alt="#"/></a> <span class="pic-caption left-to-right"> <a class="tie_a">汪口漂流</a> <a class="tie_p">汪口山环水绕，风景秀丽，得山水之灵气，地灵人杰，尽享山水之美漂流之乐！</a> </span> </div>
+										</li>
+								</ul>
+						</div>
+				</div>
+				<div class="newspoint">
+						<div class="l_news clr">
+								<div class="tabs">
+										<div id="floatLi"></div>
+										<ul class="clr">
+												<li>最好的时光</li>
+												<li>热门景点</li>
+												<li>包罗万象</li>
+										</ul>
+								</div>
+								<div class="tabs_body">
+										<div class="tabs_d">
+												<div class="tabscont clr">
+														<div class="tabs_img"><img src="images/index_b_1.jpg" alt="#"/></div>
+														<div class="extra_wrapper">
+																<div class="text2">江岭村是婺源看油菜花的最佳地点,3-4月间梯田上黄灿灿的油菜花,从山顶铺散到山谷下,还有黑瓦白墙的徽派民居与之呼应。</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+												<div class="tabscont clr">
+														<div class="tabs_img"> <img src="images/index_b_2.jpg" alt="#"/></div>
+														<div class="extra_wrapper">
+																<div class="text2">李坑村口三两棵参天的樟树组成一片树林，清澈而又宽阔的溪水穿村而过，溪水清可见底，几棵大树依偎溪旁，几个小桥默默横架其上。</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+										</div>
+										<div style="display:none;" class="tabs_d">
+												<div class="tabscont clr">
+														<div class="tabs_img"><img src="images/index_b_3.jpg" alt="#"/></div>
+														<div class="extra_wrapper">
+																<div class="text2">江岭风光无限好，拾堤田而上，岚气升腾，重峦叠翠，溪水碧澄，粉墙黛瓦时隐时现，青苗绿茶连绵成片，田舍风光，平和恬淡，好一个“绿树村边合，青山郭外斜”，这可是旅游摄影人士绝佳去处。</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+												<div class="tabscont clr">
+														<div class="tabs_img"> <img src="images/index_b_4.jpg" alt="#"/></div>
+														<div class="extra_wrapper">
+																<div class="text2">月亮湾依山伴水，水面平静如镜。一两叶小舟，远远近近高低错落的徽派民居互相辉映，形成了一幅绝美的画面。</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+										</div>
+										<div style="display:none;" class="tabs_d">
+												<div class="tabscont clr">
+														<div class="tabs_img"><img src="images/index_b_5.jpg" alt="#" /></div>
+														<div class="extra_wrapper">
+																<div class="text2">婺源是我国古建筑保存得最完整的地方之一，青林古木之间处处掩映着飞檐翘角的民居，其中汪口俞氏宗祠气势雄伟、工艺精巧，被专家誉为“艺术宝库”；</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+												<div class="tabscont clr">
+														<div class="tabs_img"> <img src="images/index_b_6.jpg" alt="#"/></div>
+														<div class="extra_wrapper">
+																<div class="text2">在青山绿水中，不经意路过的一棵古树、一株老藤、一段断壁、一眼深井可能都蕴含着一个美丽的传说。对于游历过名城的海滨和名山大川的游客来说，来婺源旅游会感受到别一种宁静清悠的享受。</div>
+																<a href="#" class="btn">详情</a> </div>
+												</div>
+										</div>
+								</div>
+								<script type="text/javascript">
+								var floatLiObj=$("#floatLi");
+								var tabsLiObj=$(".tabs li");
+								var txt;
+								txt=tabsLiObj.eq(0).html();
+								floatLiObj.html(txt);
+								var w=floatLiObj.css("width");
+								w=parseInt(w.substr(0,w.length-2));
+								$(".tabs li").each(function(index, element) {
+									$(this).on("mouseover",function(){
+										floatLiObj.html($(this).html()).animate({left:w*index+'px'},200);
+										$(".tabs_d").hide().eq(index).show();
+									});
+								});
+				</script> 
+						</div>
+						<div class="r_point clr">
+								<div class="r_title">简讯</div>
+								<div class="r_content">
+										<form class="newsletter" action="#">
+												<div class="text1">订阅接收我们的资讯</div>
+												<div class="sdf">
+														<input type="text" value="电子邮件地址" />
+												</div>
+										</form>
+								</div>
+						</div>
+				</div>
+		</div>
+		<div class="bottom_block">
+				<div class="container">
+						<div class="grid">
+								<ul>
+										<li><a href="#">常见问题</a></li>
+										<li><a href="#">观点看法</a></li>
+								</ul>
+						</div>
+						<div class="grid">
+								<ul>
+										<li><a href="#">友情链接</a></li>
+										<li><a href="#">合作伙伴</a></li>
+								</ul>
+						</div>
+						<div class="grid">
+								<ul>
+										<li><a href="#">保险公司</a></li>
+										<li><a href="#">家庭旅行</a></li>
+								</ul>
+						</div>
+						<div class="grid">
+								<ul>
+										<li><a href="#">联系方式：</a></li>
+										<li><a href="#">400-800-800</a></li>
+								</ul>
+						</div>
+				</div>
+		</div>
+</div>
+<div class="footer">
+		<div class="copy">2014 &copy; 江西省大学生科技创新与职业技能展示活动——网页设计与制作活动参赛作品</div>
+		<a href="#" id="toTop" style="margin-right: -526px; right: 50%; display: inline;"><span id="toTopHover" style="opacity: 0;"></span></a> </div>
+</body>
+</html>

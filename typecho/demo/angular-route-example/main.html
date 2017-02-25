@@ -1,0 +1,78 @@
+<html ng-app="cnodejsapp">
+	<head>
+		<title>Angular.js的route单页面路由</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="format-detection" content="telephone=no">
+		<script src="./angular.min.js"></script>
+		<script src="./angular-route.min.js"></script>
+		<script src="./main.js"></script>
+	</head>
+	<body>
+		<div>
+			<!-- 头部 -->
+			<header id="head" class="ui-header ui-header-positive ui-border-b">
+				<h1>Angular route</h1>
+			</header>
+			<!-- 导航 -->
+			<section class="ui-container">				
+				<div class="ui-label-list">
+					<label class="ui-label"><a href="#/list">列表</a></label>
+					<label class="ui-label"><a href="#/add">发布</a></label>
+					<label class="ui-label"><a href="#/about">关于</a></label>
+				</div>
+			</section>
+			<!-- 首页列表 -->
+			<section class="ui-container">
+				<br /><br />			
+				<div ng-view class="view-animate"></div>
+			</section>
+			<!-- 列表页 -->
+			<script type="text/ng-template" id="list.html">				
+				<table width="100%" border="1" style="border-collapse:collapse;">
+					<thead>
+						<td>id</td>
+						<td>标题</td>
+						<td>内容</td>
+						<td>发布时间</td>
+					</thead>
+					<tr ng-repeat="message in messageList">
+						<td>{{message.id}}</td>
+						<td><a href='#/content/{{message.id}}'>{{message.title}}</a></td>
+						<td>{{message.content}}</td>
+						<td>{{message.date|date:YY-mm-dd}}</td>
+					</tr>
+				</table>
+			</script>
+			<!-- 内容页 -->
+			<script type="text/ng-template" id="content.html">
+				<a href="#/edit/{{message.id}}">编辑</a>
+                <h1>{{message.title}}</h1>
+                <span class="date">发布日期：{{message.date|date:YY-mm-dd}}</span>
+                <div class="content">正文：{{message.content}}</div>
+			</script>
+			<!-- 增加页 -->
+			<script type="text/ng-template" id="add.html">
+				<h1>添加留言</h1>
+				标题：<input type="text" ng-model="title"><br>
+				内容：<textarea ng-model="content" cols="30" rows="10" style="vertical-align:top;"></textarea><br>
+				<button ng-click="add()">提交</button>
+			</script>
+			<!-- 编辑页 -->
+			<script type="text/ng-template" id="edit.html">
+				<h1>编辑留言{{message.id}}</h1>
+				标题：<input type="text" ng-model="message.title"><br>
+				内容：<textarea ng-model="message.content" cols="30" rows="10" style="vertical-align:top;"></textarea><br>
+				<button ng-click="update()">提交</button>
+			</script>			
+			<!-- 关于页 -->
+			<script type="text/ng-template" id="about.html">
+				{{about}}
+				<h1 ng-click="index()">点击回首页</h1>
+			</script>
+		</div>
+	</body>
+</html>

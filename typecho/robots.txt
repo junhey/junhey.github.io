@@ -1,0 +1,11 @@
+#
+# robots.txt for junhey
+#
+User-agent: * 
+
+Disallow: /test.php
+Disallow: /app
+Disallow: /usr
+Disallow: /var
+Disallow: /love
+Disallow: /admin

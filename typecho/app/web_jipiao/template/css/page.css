@@ -1,0 +1,120 @@
+@charset "utf-8";
+/*index*/
+.index-focus{height:160px;width:100%;}
+.index-focus-data{height:160px;top:0;z-index:10;}
+.index-focus-circle{bottom:10px;width:100%;height:10px;z-index:999;}
+.circleLi{width:10px;height:10px;border-radius:10px;background-color:#333;margin:0 0 0 10px;}
+.btn-index{width:90%;margin:20px auto;}
+.btn-index-left,.btn-index-right{height:50px;line-height:50px;}
+.btn-index-left{width:55%;border-radius:10px 0 0 10px;}
+.btn-index-right{width:45%;border-radius:0 10px 10px 0;}
+.btn-index-icoArea{margin:10px auto;}
+.btn-index-line{height:15px;width:60px;border-bottom:2px solid #fff;}
+.btn-index-ico{width:30px;height:30px;background-image:url(../images/ico-topbar-merge.png);}
+.index-ico-plane{background-position:-90px 0;}
+.index-ico-tel{background-position:-30px 0;}
+.cata-index{width:240px;padding:0 0 0 34px;margin:0 auto;border-bottom:1px dashed #909090;line-height:30px;background:url(../images/ico-topbar-merge.png) no-repeat -120px 0;}
+.btn-index img,.cata-index img{width:100%;}
+/*ticket*/
+.btn-ticket{width:90%;height:40px;margin:10px auto;}
+.btn-ticket-left{width:15%;border-radius:10px 0 0 10px;height:40px;line-height:40px;}
+.btn-ticket-right{width:85%;border-radius:0 10px 10px 0;height:40px;line-height:40px;padding:0 5%;}
+.btn-ticket-ico{background-image:url(../images/ico-ticket-meger.png);}
+.ticket-ico-from{background-position:center -40px;}
+.ticket-ico-arrive{background-position:center 0;}
+.ticket-ico-fromDate{background-position:center -80px;}
+.ticket-ico-backDate{background-position:center -120px;}
+.ticketInput{width:55%;height:40px;line-height:40px;font-size:14px;right:20px;color:#000;}
+.ticketInputBox{width:60%;height:40px;line-height:40px;font-size:14px;top:-7px;right:0px;color:#000;}
+.ticketInputBox>div,.ticketInputBox.input{border:none;background:none;box-shadow:none;color:#fff;!important}
+.btn-ticket-click{width:20px;height:40px;line-height:40px;right:0;top:0;}
+.ticketType{font-size:16px;}
+.ticketsubMit{width:100%;height:100%;}
+.cityProvince{margin:0}
+.cityProvince,.province,.city{padding:0 10px;line-height:36px;}
+.province{border-bottom:1px solid #fff;}
+.city{background:#fff;border-bottom:1px solid #CCC;display:none;}
+#getCity{display:none;}
+/*ticket-list*/
+#dataloadbox{width:100%;height:100%;position:absolute;z-index:99999;}
+#dataloadmask{width:100%;height:100%;background:#000;opacity:0.8;position:absolute;}
+#dataloading{width:280px;height:120px;position:absolute;margin-left:-140px;top:40%;left:50%;}
+#dataloading .loading-titbg{height:66px;background:url(../images/shenz.png) no-repeat top center;}
+#dataloading .loading-progressbg{height:13px;background:url(../images/shenz.gif) no-repeat;}
+#dataloading .loading-txt{height:40px;line-height:20px;color:#fff; text-align:center;}
+.date-list,.type-list{height:30px;}
+.date-listUl{background:#eee;}
+.type-listUl{background:#bebebe;}
+.date-listLi,.type-listLi{width:33.3333%;height:30px;line-height:30px;float:left;color:#838383;}
+.date-focus{background-color:#d2d2d2;}
+.screen-type{color:#fff;padding:0 5px;font-weight:bold;display:none;}
+.ico-ticket-list{background-image:url(../images/ico-ticket-list-merge.png);}
+.ico-ticket-list-time{background-position:15% -20px;}
+.ico-ticket-list-price{background-position:85% -50px;}
+.ticket-list{}
+.ticket-listUl{}
+.ticket-listLi{padding:5px 0 0;}
+span.ticket-listLi-item{border-bottom:1px solid #d7d7d7;}
+span.ticket-listLi-item.span.ticket-info,span.ticket-order{height:52px;}
+span.ticket-info{width:95%;}
+span.ticket-info-time{width:30%;color:#008cd4}
+span.ticket-info-detail{width:50%;}
+span.moreTicket{background-image:url(../images/ico-ticket-list-merge.png);height:10px;}
+.moreTicketHide{background-position:center -10px;}
+.moreTicketShow{background-position:center 0;}
+span.ticket-info-price{width:20%;color:#ff5900;}
+span.ticket-info-price-ico,span.ticket-summary-price-ico{background-image:url(../images/ico-ticket-list-merge.png);}
+span.ticket-info-price-ico{background-position:0 -80px}
+span.ticket-order{width:5%;line-height:52px;color:#8d8d8d;font-weight:bold;}
+.ticket-listLi-summary{background:#e7e7e7;display:none;}
+span.ticket-listLi-summary-item{height:20px;line-height:20px;border-bottom:1px solid #d7d7d7;}
+span.summary-item-type{width:30%;}
+span.summary-item-num{width:20%;}
+span.summary-item-discount{width:20%;}
+span.summary-item-price{width:30%;color:#ff5900;}
+span.ticket-summary-price-ico{background-position:25% -84px}
+.ticket-list-more{height:30px;line-height:30px;background:url(../images/bg-ticket-list-more.jpg);color:#fff;margin:10px 0 0;}
+span.more-ico{width:18px;height:14px;background:url(../images/ico-ticket-list-merge.png) 0 -133px;right:30%;top:6px;}
+/*order*/
+.order-list{width:90%;margin:5px auto 0;}
+.order-item{margin:10px 0;}
+.order-item-title{background-color:#6bbb5a;padding:10px 0;border-radius:10px 10px 0 0;}
+.ordet-item-detail{background-color:#fff;padding:10px 0;}
+.order-item-detail-txt{width:15%;margin:10px 0;}
+.order-item-detail-address{width:30%;margin:10px 0;}
+.order-item-detail-ico{width:10%;margin:10px 0;height:40px;background-image:url(../images/order-ico-merge.png);padding:20px 0 0;}
+.order-item-detail-ico-go{background-position: center 0;}
+.order-item-detail-ico-back{background-position: center -40px;}
+.ordet-item-price{background-color:#dcdcdc;padding:5px 0;border-radius:0 0 10px 10px;}
+
+.item-block{border-radius:10px;padding:10px 0;margin:10px 0;background:#fff;line-height:30px;}
+.item-block-title{}
+.item-input-block{border-radius:10px;padding:5px;width:80%;margin:10px auto;}
+.item-label{width:38%;border-right:1px solid #b7b7b7;}
+.item-input{width:58%;}
+.customerInfo{}
+.customerOP{background-image:url(../images/order-ico-merge.png);background-repeat:no-repeat;}
+.customerOPplus{background-position:64% -72px}
+.customerOPdel{background-position:64% -123px}
+.contactInfo{}
+
+.item-btn-block{width:80%;padding:10px 0;margin:10px auto;line-height:40px;}
+.item-btn-w6{width:60%;border-radius:10px 0 0 10px;}
+.item-btn-w4{width:40%;border-radius:0 10px 10px 0;}
+.item-btn{border-radius:10px;}
+#delCustomer{display:none;}
+/*ordered*/
+.ordered-info{line-height:30px;}
+.ordered-info-title{padding:5px 0;color:#cd5602;background-color:#ffc864;border-radius:10px 10px 0 0;}
+.ordered-ico{background:url(../images/order-ico-merge.png) 0 -100px no-repeat;padding-left:20px;}
+.ordered-info-content{background:#fff;padding:10px 0;}
+.ordered-info-bottom{}
+.ordered-info-bottom-left{padding:0 5px;border-radius:0 0 0 10px;width:40%;height:60px;}
+.ordered-info-bottom-right{padding:0 5px;border-radius:0 0 10px 0;width:55%;height:60px;}
+/*pay*/
+.bankGroup{margin:0}
+.bankGroup,.bank,.card{padding:0 10px;line-height:36px;}
+.bank{border-bottom:1px solid #fff;}
+.card{background:#fff;border-bottom:1px solid #CCC;display:none;}
+#bankCardBox{display:none;}
+.btn-pay{height:40px;margin:10px auto;line-height:40px;padding:0 20px;border-radius:10px;}

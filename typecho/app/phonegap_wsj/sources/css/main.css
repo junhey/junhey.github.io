@@ -1,0 +1,98 @@
+html, body{
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+
+body {
+	font-size:14px;
+	font-family:helvetica;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	background-color:#27170F;
+}
+
+#wrapper {
+	width:480px; height:762px;
+}
+
+/* 显示 div */ 
+.showMe{
+	display: block;
+}
+
+/* 隐藏 div */ 
+.hideMe{
+	display: none;
+}
+
+/* Page-Intro */
+.introBG{
+	width:480px; height:762px;
+	background:url(../images/intro.jpg) no-repeat;
+	position:absolute; z-index:1; 
+}
+
+.introBtnStart{
+	top:590px; left:90px; width:288px; height:80px;
+	position:absolute; z-index:2;
+}
+
+
+/* Page-Input */
+.inputInfoBG{
+	width:480px; height:762px;
+	background:url(../images/input.jpg) no-repeat;
+	position:absolute; z-index:1; 
+}
+
+.inputInfoTextInfo{
+	top:460px; left:126px; width:240px; height:50px;
+	text-align:center; font-size:28px;
+	position:absolute; z-index:2; 
+}
+
+.inputBtnInput{
+	top:460px; left:103px; width:280px; height:50px;
+	position:absolute; z-index:3;
+}
+
+.inputBtnReady{
+	top:525px; left:123px; width:230px; height:60px;
+	position:absolute; z-index:2;
+}
+
+/* Page-Shake */
+.shakeBG{
+	width:480px; height:762px;
+	background:url(../images/shake.jpg) no-repeat;
+	position:absolute; z-index:1; 
+}
+
+.shakeAnimPanel{
+	top:0px; left:0px; width:480px; height:591px;
+	position:absolute; z-index:2; 
+}
+
+/* Page-Result */
+.resultBG{
+	width:480px; height:762px;
+	background:url(../images/result.jpg) no-repeat;
+	position:absolute; z-index:1; 
+}
+
+.resultPanel{
+	top:62px; left:5px; width:470px; height:605px;
+	position:absolute; z-index:2; 
+}
+
+.resultBtnTryAgain{
+	top:678px; left:46px; width:180px; height:50px;
+	position:absolute; z-index:3; 
+}
+
+.resultBtnSendWeibo{
+	top:678px; left:265px; width:180px; height:50px;
+	position:absolute; z-index:3; 
+}
+

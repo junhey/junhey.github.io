@@ -1,0 +1,910 @@
+﻿/* Base Style */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html{
+	color:#333;
+	background:#fff;
+	-webkit-text-size-adjust:100%;
+-webkit-font-smoothing: antialiased;	-ms-text-size-adjust:100%;
+	text-rendering:optimizelegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: grayscale;
+}
+
+/* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */
+html.borderbox *, html.borderbox *:before, html.borderbox *:after {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section{
+	margin:0;
+	padding:0;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section{
+	display:block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video{
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea{
+	font:400 1em/1.8 "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+
+/* 去除 IE6 input/button 多余的空白 */
+button, input{
+	*width:auto;
+	*overflow:visible;
+
+	/* 让 input 和 button 一样高 */
+	line-height:normal;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner{
+	padding:0;
+	border:0;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+/* IE bug fixed: th 不继承 text-align */
+th{
+	text-align:inherit;
+}
+
+/* 去除默认边框 */
+fieldset, img{
+	border:0;
+}
+
+/* 解决 IE6-7 图片缩放锯齿问题 */
+img{
+	-ms-interpolation-mode:bicubic;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{
+	display:block;
+}
+
+/* 块/段落引用 */
+blockquote {
+	position:relative;
+	color: #999;
+	font-weight:300;
+	font-family:Avenir, 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+	border-left:1px solid #1abc9c;
+	padding-left:1em;
+	margin:1em 3em 1em 2em;
+}
+
+@media only screen and ( max-width:640px ){
+	blockquote{ margin:1em 0 !important; }
+	.post {
+		margin-bottom: 40px !important;
+	}
+	.post-title a{
+		font-size:18px !important;
+	}
+}
+
+/* Firefox 以外，元素没有下划线，需添加 */
+acronym, abbr{
+	border-bottom:1px dotted;
+	font-variant:normal;
+}
+
+/* 添加鼠标问号，进一步确保应用的语义是正确的（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌） */
+abbr{
+	cursor:help;
+}
+
+/* 一致的 del 样式 */
+del{
+	text-decoration:line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var{
+	font-style:normal;
+	font-weight:400;
+}
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol{
+	list-style:none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th{
+	text-align:left;
+}
+
+q:before, q:after{
+	content:'';
+}
+
+/* 统一上标和下标 */
+sub, sup{
+	font-size:75%;
+	line-height:0;
+	position:relative;
+}
+
+:root sub, :root sup{
+	vertical-align:baseline; /* for ie9 and other modern browsers */
+}
+
+sup{
+	top:-0.5em;
+}
+
+sub{
+	bottom:-0.25em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a{ color:rgba(51, 51, 51, 0.75); }
+a:hover{ text-decoration:underline; }
+
+.typo a{ border-bottom:1px solid rgba(234, 234, 234, 0.78); }
+.typo a:hover{ border-bottom-color:#555; color:#555; text-decoration:none; }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a{
+	text-decoration:none;
+}
+
+/* 专名号：虽然 u 已经重回 html5 Draft，但在所有浏览器中都是可以使用的，
+* 要做到更好，向后兼容的话，添加 class="typo-u" 来显示专名号
+* 关于 <u> 标签：http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-u-element
+* 被放弃的是 4，之前一直搞错 http://www.w3.org/TR/html401/appendix/changes.html#idx-deprecated
+* 一篇关于 <u> 标签的很好文章：http://html5doctor.com/u-element/
+*/
+u, .typo-u{
+	text-decoration:underline;
+}
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark{
+	background:#fffdd1;
+	border-bottom:1px solid #ffedce;
+	padding:2px;margin:0 5px;
+}
+
+/* 代码片断 */
+pre, code, pre tt{
+	font-family: consolas, 'Microsoft YaHei', monospace;
+	font-size: 14px;
+}
+
+pre{
+	background:#f8f8f8;
+	border:1px solid #ddd;
+	padding:1em 1.5em;
+	display:block;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* 一致化 horizontal rule */
+hr{
+	border:none;
+	border-bottom:1px solid #cfcfcf;
+	margin-bottom:10px;
+	*color:pink; *filter:chroma(color=pink);
+	height:10px;
+	*margin:-7px 0 2px;
+}
+
+/* 底部印刷体、版本等标记 */
+small, .typo-small,
+/* 图片说明 */
+figcaption{
+	font-size:0.9em;
+	color:#888;
+}
+
+strong, b{font-weight:bold;color:#000;}
+
+/* 可拖动文件添加拖动手势 */
+[draggable]{
+	cursor:move;
+}
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th{
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+.textwrap-table{
+	table-layout:fixed;
+}
+
+/* 提供 serif 版本的字体设置: iOS 下中文自动 fallback 到 sans-serif */
+.serif{ font-family:Palatino, Optima, Georgia, serif; }
+
+/* 保证块/段落之间的空白隔行 */
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
+.typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table, blockquote{
+	margin-bottom:1.8em;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+	font-weight:200;
+	color:#000;
+}
+
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
+.typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6{
+	margin-bottom:0.4em;
+	line-height:1.5;
+}
+
+.typo h1, .typo-h1{
+	font-size:2em;
+}
+
+.typo h2, .typo-h2{
+	font-size:1.8em;
+}
+
+.typo h3, .typo-h3{
+	font-size:1.6em;
+}
+
+.typo h4, .typo-h4{
+	font-size:1.4em;
+}
+
+.typo h5, .typo h6, .typo-h5, .typo-h6{
+	font-size:1.2em;
+}
+
+/* 在文章中，应该还原 ul 和 ol 的样式 */
+.typo ul, .typo-ul{
+	margin-left:1.3em;
+	list-style:disc;
+}
+
+.typo ol, .typo-ol{
+	list-style:decimal;
+	margin-left:1.9em;
+}
+
+.typo li ul, .typo li ol, .typo-ul ul, .typo-ul ol, .typo-ol ul, .typo-ol ol{
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:2em;
+}
+
+.typo li ul, .typo-ul ul, .typo-ol ul{
+	list-style:circle;
+}
+
+/* 同 ul/ol，在文章中应用 table 基本格式 */
+.typo table th, .typo table td, .typo-table th, .typo-table td .typo table caption{
+	border:1px solid #ddd;
+	padding:0.5em 1em;
+	color:#666;
+}
+
+.typo table th, .typo-table th{
+	background:#fbfbfb;
+}
+
+.typo table thead th, .typo-table thead th{
+	background:#f1f1f1;
+}
+
+.typo table caption{
+	border-bottom:none;
+}
+
+/* 去除 webkit 中 input 和 textarea 的默认样式  */
+.typo-input, .typo-textarea{
+	-webkit-appearance:none;
+	border-radius:0;
+}
+
+/* 高亮选中 */
+::-moz-selection{
+	background: rgba(51, 71, 81, 0.8);
+	color:#fff;
+}
+
+::selection{
+	background: rgba(51, 71, 80, 0.8);
+	color:#fff;
+}
+
+.typo-em, .typo em, legend, caption{
+	color:#000;
+	font-weight:inherit;
+}
+
+/* 着重号，只能在少量（少于100个字符）且全是全角字符的情况下使用 */
+.typo-em {
+	position: relative;
+}
+.typo-em:after {
+	position: absolute;
+	top: 0.65em;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	content: "・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・";
+}
+
+/* Responsive images */
+.typo img, img { max-width: 100%; }
+
+/* 清理浮动 */
+.clear:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+
+.clear {
+	zoom:1; /* for IE6 IE7 */
+}
+
+/* 隐藏, 通常用来与 JS 配合 */
+body .fn-hide {
+	display: none;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+.fl, .fr {
+	display:inline;
+}
+
+.fl {
+	float:left;
+}
+
+.fr {
+	float:right;
+}
+
+/* Common */
+body {
+	/*background: #F7F7F7;改了很多次,还是觉得白色更好看*/
+	background:fff;
+}
+
+/* Header */
+#header {
+	width: 100%;
+}
+
+/* Navbar */
+.nav-wrap {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	z-index: 999;
+	position: fixed;
+	background: #fff;
+}
+
+#navbar {
+	height: 40px;
+	width: 1100px;
+	margin: 0 auto;
+	overflow: hidden;
+	line-height: 40px;
+}
+
+#navbar a {
+	float: left;
+	color: #999;
+	padding: 0 20px;
+	font-size: 16px;
+	display: inline-block;
+	transition: color .3s;
+}
+
+#navbar a:hover {
+	color: rgba(0, 0, 0, 0.8);
+	text-decoration: none;
+	background: rgba(234, 234, 234, 0.78);
+}
+
+#navbar a.main {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+#navbar a.current {
+	color: rgba(51, 71, 80, 0.78);
+	background: rgba(234, 234, 234, 0.78);
+}
+
+#navbar form {
+	float: right;
+	display: inline;
+}
+
+/* Logo */
+
+#logo {
+	color: #fff;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#logo h1, #logo h2 {
+	position: relative;
+	z-index: 1;
+}
+
+#logo h1 {
+	font-size: 3.2em;
+	padding: 60px 0 0;
+}
+
+#logo h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#logo h2 {
+	color: #fff;
+	font-size: 1.6em;
+	padding-bottom: 30px;
+}
+
+#logo .background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+@media (min-width: 1100px) {	
+	#logo h1 {
+		padding: 150px 0 0;
+	}
+	#logo h2 {
+		padding: 0;
+	}
+}
+
+/* Search Bar */
+.search-input {
+	border: 0;
+	height: 40px;
+	width: 150px;
+	padding: 0 20px 0 40px;	
+	transition: background-color .3s;
+	/*outline-offset: -1px;	
+	outline: 1px solid #ebebeb;
+	outline-width: 0 1px 0 1px;
+	background: transparent url(img/icon-search.png) no-repeat 10px center;*/
+}
+
+.search-input:hover {
+	background-color: #f7f7f7;
+}
+
+.search-input:focus {
+	background-color: #fff;
+    outline: none;
+}
+
+/* Content */
+
+#wrapper {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+#container {
+	margin: 60px 0 0;
+	counter-reset: post-list;
+}
+
+@media (max-width: 1100px) {
+	#wrapper, #navbar {
+		width: 100%;
+	}
+
+	#container {
+		margin: 30px 20px 0;
+	}
+}
+
+/* Footer */
+#footer {	
+	color: #ccc;
+	font-size: 14px;
+	text-align: center;
+	line-height: 20px;	
+	/*background: url(../img/footbg.gif) bottom center repeat-x;决定不用这张图,有时候觉得很难看*/
+	/*padding: 20px;height: 63px;这两个是图片使用的*/
+}
+
+#footer a {
+	color: #999;
+}
+
+/* Post */
+.post {
+	background: #fff;
+	position: relative;
+	margin-bottom: 60px;
+	list-style-type: none;
+	border-radius: 3px;
+	overflow: hidden;
+	transition: all 0.2s;
+	transform: translateZ(0);
+	will-change: inherit;
+	counter-increment: post-list;
+	transition: background 0.3s;
+}
+
+.post-list:hover::after {
+  list-style-type: none;
+  margin: 0;
+  content: counter(post-list);
+  position: absolute;
+  right: 18px;
+  top: -1px;
+  background: #DDDDDD;
+  box-shadow: 0 0 1px rgba(51, 71, 80, 0.8), 0px 1px 0px rgba(51, 71, 80, 0.3);
+  color: #FFF;
+  font-size: 19px;
+  padding: 3px 6px;
+  transition: background 0.3s;
+}
+.post-list:hover {
+  list-style-type: none;
+  transition: all 0.2s;
+  transform: scale(1.05);
+}
+
+.post:last-child {
+	margin-bottom: 0;
+}
+
+.post-title a {
+	color: #555;
+	height: 100px;
+	display: block;
+	font-size: 26px;
+	line-height: 70px;
+	text-indent: 40px;
+	text-decoration: none;		
+	white-space:pre;
+}
+
+.post-content, .post-entry {
+	font-size: 16px;
+	padding: 40px;
+	padding-top: 35px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+}
+
+.post-entry {
+	text-indent: 20px;
+}
+
+.post-time {
+	left: 0;
+	top: 45px;
+	color: #555;
+	margin: 40px;
+	display: block;
+	font-size: 14px;
+	margin-top: 10px;
+	position: absolute;
+}
+
+.post-footer {
+	padding: 10px 20px;
+	border-top: 1px solid #dfdfdf;
+}
+
+.post-copyright{
+	text-align:center;
+	padding:5px 0 10px;
+}
+
+.post-tags {
+	float: left;
+}
+
+.post-tags a {
+	float: left;
+	display: block;
+	font-size: 14px;
+	padding: 3px 12px;
+	text-decoration: none;
+	color: hsl(0, 0%, 60%);
+	transition: background .2s, color .4s;
+	background: transparent;
+}
+
+.post-tags a:before {
+	content: '#';
+	margin-right: 5px;
+	color: rgb(238, 238, 238);
+}
+
+.post-tags a:hover {
+	color: #fff;
+	background: rgb(238, 238, 238);
+}
+
+.post-readmore {
+	color: #fff;
+	float: right;
+	font-size: 14px;
+	padding: 3px 12px;
+	background: #D6D6D6;
+	transition: background .3s;
+}
+
+.post-readmore:hover {
+	color: #fff;
+	text-decoration: none;
+	background: rgb(44, 92, 116);
+}
+
+.post-readmore:link {
+	color: #fff;
+}
+
+.post-next-prev {
+	float: right;
+	line-height: 30px;
+}
+
+.post-next-prev .prev, .post-next-prev .next {
+	padding: 0 20px;
+	float: left;
+	color: #999;
+	background: #f8f8f8;
+	transition: background .4s;
+}
+
+.post-next-prev .prev a, .post-next-prev .next a {
+	color: #999;
+}
+
+.post-next-prev .next:hover, .post-next-prev .prev:hover {
+	background: #fdfdfd;
+}
+
+.post-next-prev .prev {
+	border-right: 1px solid #ddd;
+}
+
+.archive-title {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+/* Comment */
+
+#comment-list {
+	background: #fff;
+	position: relative;
+}
+
+#comment-list .wrap {
+	width: 980px;
+	margin: 0 auto;
+}
+
+#comment-form .textarea, #comment-form input {
+	text-indent: 10px;
+	outline: none;
+	font: inherit;
+	overflow: auto;
+	position: relative;
+	border: 1px solid #ddd;
+	vertical-align: baseline;
+	-webkit-appearance: none;
+	resize: none;
+}
+
+#comment-form input {
+	height: 40px;
+	width: 100%;
+	display: block;
+	border-bottom: 0;
+}
+
+#comment-form .textarea {
+	width: 100%;
+	height: 111px;
+}
+
+#comment-form button {
+	color: #777;
+	height: 32px;
+	width: 100px;
+	outline: none;
+	cursor: pointer;
+	margin-top: 7px;
+	background: #fff;
+	font-size: 14px;
+	border: 1px solid #ddd;
+}
+
+#comments-list {
+	margin-top: 20px;
+}
+
+@media (max-width: 980px) {
+	#comment-list .wrap {
+		width: 100%;
+	}
+
+	#comment-list {
+		padding: 0 0 20px;
+	}
+
+	#comment-list .respond {
+		width: 100%;
+	}
+
+	#comment-form {
+		text-align: center;
+	}
+
+	#comment-form input {
+		border-left: 0;
+		border-right: 0;
+	}
+
+	#comment-form .textarea {
+		border-left: 0;
+		border-right: 0;
+	}
+
+	#comments-list {
+		padding-bottom: 0;
+	}
+}
+
+#comments-list li {
+	padding: 20px 0;
+	padding-left: 20px;
+	position: relative;
+	border-top: 1px solid #ddd;
+}
+
+#comments-list li .comment-children {
+	padding-left: 75px;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+#comments-list li .comment-children li {
+	padding-left: 0;
+}
+
+#comments-list li .authorname a {
+	color: #777;
+	font-size: 14px;
+}
+
+#comments-list li footer {
+	padding-left: 75px;
+	font-size: 14px;
+	color: #999;
+	margin-bottom: -5px;
+}
+
+#comments-list li footer a {
+	color: #999;
+	margin-left: 10px;
+}
+
+.comment-author img {
+	float: left;
+	width: 50px;
+	height: 50px;
+	padding: 1px;
+	margin-right: 20px;
+	border: 1px solid #ddd;
+}
+
+.comment-content {
+	word-wrap: break-word;
+	word-break: normal;
+	padding-left: 75px;
+}
+
+/* Pagination*/
+.page-navigator{padding-bottom:20px}
+.page-navigator li{display:inline}
+.page-navigator a,.page-navigator span{padding: 5px 15px;line-height:20px;text-decoration:none;background-color:#fff;color:#666}
+.page-navigator a:hover,.page-navigator a:focus{background-color:#ccc;color:#444}
+.page-navigator .current a,.page-navigator .current{background-color:#334750;color:#fff;cursor:default}
+
+/* Code */
+pre .language-comment {
+  color: #8e908c;
+}
+pre .language-variable,
+pre .language-attribute,
+pre .language-tag,
+pre .language-regexp,
+pre .language-ruby .constant,
+pre .language-xml .tag .title,
+pre .language-xml .pi,
+pre .language-xml .doctype,
+pre .language-html .doctype,
+pre .language-css .id,
+pre .language-css .class,
+pre .language-css .pseudo {
+  color: #c82829;
+}
+pre .language-number,
+pre .language-preprocessor,
+pre .language-built_in,
+pre .language-literal,
+pre .language-params,
+pre .language-constant {
+  color: #f5871f;
+}
+pre .language-ruby .class .title,
+pre .language-css .rules .attribute {
+  color: #718c00;
+}
+pre .language-string,
+pre .language-value,
+pre .language-inheritance,
+pre .language-header,
+pre .language-ruby .symbol,
+pre .language-xml .cdata {
+  color: #718c00;
+}
+pre .language-title,
+pre .language-css .hexcolor {
+  color: #3e999f;
+}
+pre .language-function,
+pre .language-python .decorator,
+pre .language-python .title,
+pre .language-ruby .function .title,
+pre .language-ruby .title .keyword,
+pre .language-perl .sub,
+pre .language-javascript .title,
+pre .language-coffeescript .title {
+  color: #4271ae;
+}
+pre .language-keyword,
+pre .language-javascript .function {
+  color: #8959a8;
+}

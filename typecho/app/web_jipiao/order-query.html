@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="heightAll">
+<head>
+<meta charset="utf-8">
+<title>订单查询</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="template/css/bootstrap.min.css">
+<link rel="stylesheet" href="template/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="template/css/global.css">
+<link rel="stylesheet" href="template/css/page.css">
+<script src="template/js/jquery-2.1.0.min.js"></script>
+<script src="template/js/bootstrap.min.js"></script>
+<script src="template/js/handler.js"></script>
+</head>
+<body>
+<div class="container padin0">
+		<div class="topBar pztR">
+			<div class="topIco icoGoBack pztA"><a class="dspBlock widthAll heightAll" href="pay-success.html"></a></div>
+			<div class="topIco icoHome pztA"><a class="dspBlock widthAll heightAll" href="index.html"></a></div>
+			<div class="topBarTitle text-center">订单查询</div>
+		</div>
+		<div class="mainBox-order">
+			<form action="order-detail.html" method="post">
+			<div class="order-list">
+				<!--orderInfo-->
+				<div class="item-block text-center">
+					<div class="item-block-title">
+						<span class="colorOrange font16 dspBlock">请输入信息</span>
+					</div>
+					<div class="item-input-block bgClrGray0 clearfix">
+						<span class="dspBlock item-label fltL">联系姓名</span>
+						<span class="dspBlock item-input fltR colorGray"><input type="text" class="inputInit widthAll heightAll" name="linkman" placeholder="请填写真实姓名"></span>
+					</div>
+					<div class="item-input-block bgClrGray1 clearfix">
+						<span class="dspBlock item-label fltL">手机号码</span>
+						<span class="dspBlock item-input fltR colorGray"><input type="tel" class="inputInit widthAll heightAll" name="cellphone" placeholder="请填写有效手机号码"></span>
+					</div>
+				</div>
+				<!--btnPay-->
+				<div class="item-btn-block">
+					<span class="dspBlock bgClrOrange item-btn"><input type="submit" class="inputInit widthAll heightAll colorWhite" value="立即查询"></span>
+				</div>
+			</div>
+			</form>
+		</div>
+		<div class="copy">Copyright &copy; 2014 深圳市力天航空服务有限公司All Rights Reserved
+</div>
+</div>
+</body>
+</html>
