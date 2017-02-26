@@ -3,9 +3,8 @@ title: 阿里云centos搭建nginx和node全过程
 date: 2017-02-26 16:59:09
 tags: [nginx,node,php,centos]
 ---
-# 阿里云centos搭建nginx和node全过程
 
-> centos版本:CentOS release 6.8 (Final)
+* centos版本:CentOS release 6.8 (Final) *
 
 
 1. ssh登录
