@@ -1,1 +1,0 @@
-function Locus(){this.getByCircle=function(a){for(var b=a.x,c=a.y,d=a.r,e=a.num,f=a.sDeg,g=[],h=360,i=2*Math.PI/h,j=Math.ceil(h/e),k=0;h>k;k++)if(0==k%j){var l=b+d*Math.cos((k+f)*i),m=c+d*Math.sin((k+f)*i);g.push({x:l,y:m})}return g}}

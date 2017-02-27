@@ -1,3 +1,0 @@
-RewriteEngine on
-RewriteCond $1 !^(index\.php|templates|robots\.txt)
-RewriteRule ^(.*)$ /admin/index.php/$1 [L]
