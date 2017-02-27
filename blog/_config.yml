@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 url: http://junhey.com
 root: /
 #permalink: :year/:month/:day/:title/
-permalink: posts/title.html
+permalink: :year/:month/:day/:title.html
 permalink_defaults: 
 
 # Directory
