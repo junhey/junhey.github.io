@@ -21,6 +21,7 @@ script:
   - hexo g
 
 after_script:
+  - cp -f ../README.md ./public/README.md
   - cd ./public
   - git init
   - git config user.name "junhey"
