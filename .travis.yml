@@ -1,4 +1,6 @@
+#指定运行环境
 language: node_js
+#指定nodejs版本，这里采用稳定版
 node_js: stable
 
 # Travis-CI Caching
@@ -13,8 +15,8 @@ install:
 
 
 #before_script:
- # - npm install -g gulp
-
+# - npm install -g gulp
+#运行的脚本命令
 script:
   - hexo g
 
@@ -28,9 +30,12 @@ after_script:
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # E: Build LifeCycle
 
+#指定分支，只有指定的分支提交时才会运行脚本
 branches:
   only:
     - develop
 env:
  global:
    - GH_REF: github.com/junhey/junhey.github.io.git
+
+#  https://docs.travis-ci.com/
