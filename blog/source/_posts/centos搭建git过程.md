@@ -1,3 +1,8 @@
+title: centos搭建git过程
+categories: linux
+tags: [linux,centos,git]
+date: 2017-3-20 22:18:00
+---
 ### 确认服务器是否安装Git
 ```
 rpm -qa git
