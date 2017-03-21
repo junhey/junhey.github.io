@@ -49,6 +49,7 @@ chown -R junhey-git:junhey-git gitrepo/
 git init --bare test.git
 ```
 >git clone ssh://username@username.webfactional.com:/home/username/webapps/git_app/repos/dev.git
+
 ### 本地拉取代码/克隆仓库
 ```
 mkdir test
