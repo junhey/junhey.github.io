@@ -12,8 +12,6 @@ A brand new default theme for [Hexo].
 $ git clone https://github.com/hexojs/hexo-theme-landscape.git themes/landscape
 ```
 
-**Landscape requires Hexo 2.4 and above.**
-
 ### Enable
 
 Modify `theme` setting in `_config.yml` to `landscape`.
@@ -84,7 +82,6 @@ You can put your sidebar in left side, right side or bottom of your site by edit
 Landscape provides 5 built-in widgets:
 
 - category
-- tag
 - tagcloud
 - archives
 - recent_posts
@@ -104,8 +101,3 @@ All of them are enabled by default. You can edit them in `widget` setting.
 - **fontawesome** - Only download [Font Awesome].
 - **fancybox** - Only download [Fancybox].
 - **clean** - Clean temporarily files and downloaded files.
-
-[Hexo]: http://zespia.tw/hexo/
-[Fancybox]: http://fancyapps.com/fancybox/
-[Font Awesome]: http://fontawesome.io/
-[Grunt]: http://gruntjs.com/
