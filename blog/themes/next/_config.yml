@@ -45,12 +45,12 @@ index_with_subtitle: true
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  categories: /categories/
+  #categories: /categories/
   about: /about/
   archives: /archives/
   tags: /tags/
-  sitemap: /sitemap.xml
-  commonweal: /404.html
+  #sitemap: /sitemap.xml
+  #commonweal: /404.html
 
 
 # Enable/Disable menu icons.
@@ -304,9 +304,6 @@ han: false
 # Baidu Analytics ID
 baidu_analytics: 0d51179e92e94d3c0d5a2a062b2a5d2b
 
-# Duoshuo ShortName
-#duoshuo_shortname:
-
 # Disqus
 disqus:
   enable: false
@@ -397,8 +394,8 @@ vkontakte_api:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating: 
-  enable: false
-  id:     #<app_id>
+  enable: true
+  id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81 #<app_id>
   color:  fc6423
   
 
