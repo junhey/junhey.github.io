@@ -1,7 +1,3 @@
-# junhey.github.io
-
-[疯狂的迈步](https://junhey.github.io)Blog
-
 [![Hexo](https://img.shields.io/badge/hexo-3.2.0-brightgreen.svg)](http://hexo.io/)
 [![Build](https://travis-ci.org/junhey/junhey.github.io.svg?branch=develop)](https://travis-ci.org/junhey/junhey.github.io)
 
