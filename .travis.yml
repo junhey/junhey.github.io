@@ -18,18 +18,16 @@ install:
 # - npm install -g gulp
 #运行的脚本命令
 script:
-  - hexo clean
   - hexo g
 
 after_script:
-  - cp -f ../README.md ./public/README.md
-  - cp -r ../love ./public/love
-  - cd ./public
+  - cp -f ../README.md ./public/README.md #同步readme
+  - cp -r ../love ./public/love #同步love
+  - cd ./public #提交public目录
   - git init
   - git config user.name "junhey"
   - git config user.email "junhey@qq.com"
-  - git add .
-  - git commit -m "Update docs"
+  - git add . && git commit -m "Site updated"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # E: Build LifeCycle
 
