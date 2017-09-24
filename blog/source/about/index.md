@@ -46,7 +46,7 @@ date: 2013-03-01 12:36:00
 [豆瓣]
 [网易云]
 [邮件]
-[twitter]
+[twitter](https://twitter.com/junheing)
 [facebook]
 [Quora]
 [codepen]
