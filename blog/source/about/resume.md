@@ -1,7 +1,33 @@
 date: 2011-10-01 12:36:00
 ---
 
-### 技术能力
+### 联系方式
+
+手机:&#49;&#55;&#54;&#56;&#56;&#56;&#51;&#51;&#50;&#51;&#51;
+
+Email:junhey#qq.com(#用@代替)
+
+微信号:\u0068\u006a\u0039\u0032\u0038\u0032\u0033
+
+### 个人信息
+
+何俊/男/1992
+
+本科/景德镇陶瓷大学/信息管理与信息系统
+
+工作年限：3.5年
+
+Github: https://github.com/junhey
+
+期望职位：前端开发
+
+期望城市：深圳/广州
+
+### 工作经历
+
+...
+
+### 技能清单
 
 ❖ 熟悉W3C标准，熟悉Web语义化、熟练手写符合标准的结构和代码。
 ❖ 熟悉ECMAScript标准，合理运用设计模式，崇尚JavaScript模块化、前后端分离。
@@ -16,6 +42,8 @@ date: 2011-10-01 12:36:00
 ❖ 熟悉后端开发相关知识，包括PHP、Node.Js、Mysql等做Mock和测试。
 ❖ 熟悉Photoshop,有较好审美、图像处理能力和设计能力，有平面作品。
 ❖ 熟悉Mac OS、WebStorm、Fiddler、XMAPP、IE Tester、SVN、Git。
+
+参考技能关键字：javascript node css php mysql linux thinkphp web
 
 ### 自我评价
 
