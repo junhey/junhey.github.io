@@ -22,7 +22,7 @@ I'm :heart: programming & UI design.
 
 * E-mail:   [junhey@foxmail.com](mailto:junhey@foxmail.com)
 * Github:   [@junhey](https://github.com/junhey)
-* Twitter:  [@junhey](https://twitter.com/junhey)
+* Twitter:  [@junhey](https://twitter.com/junheing)
 * Weibo:    [@疯狂的迈步](http://www.weibo.com/juncoding)
 
 ## Branches

@@ -23,6 +23,7 @@ script:
 after_script:
   - cp -f ../README.md ./public/README.md #同步readme
   - cp -r ../love ./public/love #同步love
+  - cp -r ../project ./public/project #同步project
   - cd ./public #提交public目录
   - git init
   - git config user.name "junhey"
