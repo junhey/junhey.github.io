@@ -1,7 +1,7 @@
 title:  javascript event loop
 categories: javascript
 tags: [javascript,event-loop]
-date: 2017-03-17 12:36:56
+date: 2018-04-07 15:06:36
 ---
 
 在Nodejs事件循环机制中，有任务两个队列
