@@ -19,6 +19,7 @@ const Page = function()={
       fn&& fn();
     }else{
       // 发请求获取数据
+      $.get();
     }
   }
 }
