@@ -31,7 +31,9 @@ jobs:
         run: pwd
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          cd ./blog
+          npm install
 
       - name: Build
         run: |
