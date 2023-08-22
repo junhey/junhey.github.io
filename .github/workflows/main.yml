@@ -53,3 +53,10 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./blog/public
           publish_branch: gh-pages
+          
+      - name: Deploy to docs Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./blog/public
+          publish_branch: master
