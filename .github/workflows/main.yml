@@ -40,10 +40,10 @@ jobs:
       - name: Build
         run: |
           npm run build
-          # rsync -f ../README.md ./public/README.md
-          # rsync -f ../CNAME ./public/CNAME
-          # rsync -r ../love ./public/love
-          # rsync -r ../project ./public/project
+          rsync -f ../README.md ./public/README.md
+          rsync -f ../CNAME ./public/CNAME
+          rsync -r ../love ./public/love
+          rsync -r ../project ./public/project
         working-directory: ./blog
 
       - name: Deploy to GitHub Pages
