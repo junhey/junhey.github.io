@@ -44,8 +44,7 @@ jobs:
 
       - name: Copy File
         run: |
-          rsync -f ./README.md ./blog/public/README.md
-          rsync -f ./CNAME ./blog/public/CNAME
+          rsync -u ./README.md ./blog/public/README.md
           rsync -r ./love ./blog/public/love
           rsync -r ./project ./blog/public/project
         working-directory: ./
