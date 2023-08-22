@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://junhey.com
+url: https://junhey.github.io/
 root: /
 #permalink: :year/:month/:day/:title/
 permalink: :year/:month/:day/:title.html
@@ -69,8 +69,13 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+auto_update_hexo: true
 deploy:
-  type:
+  type: git
+  repository: git@github.com:junhey/junhey.github.io.git
+  branch: master
+  message: Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}
+  cache_control: no-cache, no-store, must-revalidate
 
 
 # Analytics
