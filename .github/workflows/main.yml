@@ -26,18 +26,20 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
-      # 查看路径 : 
-      - name: Look Path
-        run: pwd
+            
+      
 
       - name: Install Dependencies
         run: |
           cd ./blog
           npm install
+      
+      - name: Look Path
+        run: pwd
 
       - name: Build
         run: |
-          hexo g
+          npm build
           cp -f ../README.md ./public/README.md
           cp -f ../CNAME ./public/CNAME
           cp -r ../love ./public/love
