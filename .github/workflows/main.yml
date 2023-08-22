@@ -40,10 +40,10 @@ jobs:
       - name: Build
         run: |
           npm build
-          cp -f ../README.md ./public/README.md
-          cp -f ../CNAME ./public/CNAME
-          cp -r ../love ./public/love
-          cp -r ../project ./public/project
+          # cp -f ../README.md ./public/README.md
+          # cp -f ../CNAME ./public/CNAME
+          # cp -r ../love ./public/love
+          # cp -r ../project ./public/project
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
