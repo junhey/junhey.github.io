@@ -26,8 +26,6 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
-            
-      
 
       - name: Install Dependencies
         run: |
@@ -44,7 +42,7 @@ jobs:
 
       - name: Copy File
         run: |
-          rsync -u ./README.md ./blog/public/README.md
+          rsync -r ./README.md ./blog/public/README.md
           rsync -r ./love ./blog/public/love
           rsync -r ./project ./blog/public/project
         working-directory: ./
