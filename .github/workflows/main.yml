@@ -1,0 +1,49 @@
+name: Build and Deploy
+on: 
+  push:
+     branches:
+       - master 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      # 缓存依赖项: https://docs.github.com/cn/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          # path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      # 查看路径 : 
+      - name: Look Path
+        run: pwd
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: |
+          hexo g
+          cp -f ../README.md ./public/README.md
+          cp -f ../CNAME ./public/CNAME
+          cp -r ../love ./public/love
+          cp -r ../project ./public/project
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
