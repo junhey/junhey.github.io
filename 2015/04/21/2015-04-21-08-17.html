@@ -1,0 +1,800 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="web,移动,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="腾讯系Github地址:  https://github.com/AlloyTeam/腾讯全端AlloyTeam团队Blog:  http://www.alloyteam.com/  腾讯移动Web整体解决方案 Spirit并不是一个具体的框架或者工具，但是她是移动端一系列解决方案的整合与聚拢。她是Alloyteam开发团队在移动开发项目中通过大量实践、归纳、总结提炼而成，最终沉淀下来的一个体系">
+<meta name="keywords" content="web,移动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动Web前端框架 ( 移动开发框架整理 )">
+<meta property="og:url" content="http://junhey.com/2015/04/21/2015-04-21-08-17.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="腾讯系Github地址:  https://github.com/AlloyTeam/腾讯全端AlloyTeam团队Blog:  http://www.alloyteam.com/  腾讯移动Web整体解决方案 Spirit并不是一个具体的框架或者工具，但是她是移动端一系列解决方案的整合与聚拢。她是Alloyteam开发团队在移动开发项目中通过大量实践、归纳、总结提炼而成，最终沉淀下来的一个体系">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动Web前端框架 ( 移动开发框架整理 )">
+<meta name="twitter:description" content="腾讯系Github地址:  https://github.com/AlloyTeam/腾讯全端AlloyTeam团队Blog:  http://www.alloyteam.com/  腾讯移动Web整体解决方案 Spirit并不是一个具体的框架或者工具，但是她是移动端一系列解决方案的整合与聚拢。她是Alloyteam开发团队在移动开发项目中通过大量实践、归纳、总结提炼而成，最终沉淀下来的一个体系">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2015/04/21/2015-04-21-08-17.html">
+
+
+
+
+
+  <title>移动Web前端框架 ( 移动开发框架整理 ) | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2015/04/21/2015-04-21-08-17.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">移动Web前端框架 ( 移动开发框架整理 )</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-21T00:17:00+00:00">
+                2015-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>腾讯系<br>Github地址:  <a href="https://github.com/AlloyTeam/" target="_blank" rel="noopener">https://github.com/AlloyTeam/</a><br>腾讯全端AlloyTeam团队Blog:  <a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a></p>
+</blockquote>
+<p>腾讯移动Web整体解决方案</p>
+<p>Spirit并不是一个具体的框架或者工具，但是她是移动端一系列解决方案的整合与聚拢。她是Alloyteam开发团队在移动开发项目中通过大量实践、归纳、总结提炼而成，最终沉淀下来的一个体系，真正建立一套移动Web开发的集成解决方案。</p>
+<p>Spirit 官网： <a href="http://alloyteam.github.io/Spirit/" target="_blank" rel="noopener">http://alloyteam.github.io/Spirit/</a></p>
+<p>Pro-腾讯移动Web前端框架<br>Built with Pro: Mobile QQ<br>演示地址: <a href="http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html" target="_blank" rel="noopener">http://rawgithub.com/AlloyTeam/Pro/master/demo/index.html</a></p>
+<blockquote>
+<p>百度系<br><a href="https://github.com/baidufe" target="_blank" rel="noopener">https://github.com/baidufe</a><br><a href="https://github.com/gmuteam" target="_blank" rel="noopener">https://github.com/gmuteam</a><br><a href="https://github.com/ecomfe" target="_blank" rel="noopener">https://github.com/ecomfe</a></p>
+</blockquote>
+<p>GMU组件</p>
+<p>基于zepto的ui组件库，适用于移动端<br>在线演示: <a href="http://gmu.baidu.com/demo/" target="_blank" rel="noopener">http://gmu.baidu.com/demo/</a></p>
+<p>其他移动开发框架<br>(1) Fries<br>Fries是一款稳定的HTML-CSS-JS框架，用于在实际项目和原型设计中创造类似于Android的原生UI界面。该框架包含所有的重要组件，比如Form、工具栏、列表、按钮、下拉列表及标签。它还专门针对PhoneGap进行了优化，能容易地转换为本地应用。<br>演示地址: <a href="http://getfri.es/" target="_blank" rel="noopener">http://getfri.es/</a><br>(2) Junior<br>Junior为前端框架，用来构建基于HTML5的移动Web应用，外观与行为跟本地应用相似。它采用针对移动性能优化的CSS3转换，支持旋转灯箱效果，包含多样的Ratchet UI组件。整个框架使用Zepto（类似jQuery语法的轻量级移动设备js类库），且整合了backbone.js的视图和路由。Junior十分易于使用，且提供详细的文档及案例，便于学习。<br>演示地址: <a href="http://justspamjustin.github.io/junior" target="_blank" rel="noopener">http://justspamjustin.github.io/junior</a><br>(3) jQuery Mobile<br>jQuery Mobile是 jQuery发布的针对手机和平板设备、经过触控优化的Web框架。它基于jQuery，在不同移动设备平台上可提供统一的用户界面。该框架基于渐近增强技术，并利用HTML5和CSS3特性。<br>参考: <a href="http://www.csdn.net/article/2013-07-09/2816161" target="_blank" rel="noopener">http://www.csdn.net/article/2013-07-09/2816161</a><br>(4) ChocolateChip-UI<br>官网: <a href="http://www.chocolatechip-ui.com/" target="_blank" rel="noopener">http://www.chocolatechip-ui.com/</a><br>演示: <a href="http://www.chocolatechip-ui.com/demo" target="_blank" rel="noopener">http://www.chocolatechip-ui.com/demo</a><br>(5) 移动Web应用JavaScript UI库 App.js<br>App.js是由Kik Interactive推出的一款轻量级、开源的JS UI库，能为移动Web应用开发处理一般场景，及维护与其他JS库的兼容性提供一个强大起点。而开发者亦无需牺牲内容及性能，即可创建出足以媲美原生的移动Web应用。<br>官网: <a href="http://code.kik.com/app/2/" target="_blank" rel="noopener">http://code.kik.com/app/2/</a><br>文档: <a href="http://code.kik.com/app/2/docs.html" target="_blank" rel="noopener">http://code.kik.com/app/2/docs.html</a><br>(6) Framework7<br>官网：<a href="http://www.idangero.us/framework7" target="_blank" rel="noopener">http://www.idangero.us/framework7</a><br>(7) Amaze UI | 中国首个开源HTML5 跨屏前端框架<br>官网：<a href="http://amazeui.org/" target="_blank" rel="noopener">http://amazeui.org/</a><br>(8)[Hybird App] mui (最接近原生APP体验的高性能框架)<br>官网: <a href="http://dcloud.io/hellomui/" target="_blank" rel="noopener">http://dcloud.io/hellomui/</a><br>HelloH5+ DEMO: <a href="http://dcloud.io/helloh5/" target="_blank" rel="noopener">http://dcloud.io/helloh5/</a><br>更多示例: <a href="http://ask.dcloud.net.cn/article/90" target="_blank" rel="noopener">http://ask.dcloud.net.cn/article/90</a><br>(9)[Hybird App] ionic framework ( JobDeer@easy推荐 )<br>官网: <a href="http://ionicframework.com/" target="_blank" rel="noopener">http://ionicframework.com/</a><br>基于ionic的Hybird app: 微观天下 <a href="http://fir.im/wgtx" target="_blank" rel="noopener">http://fir.im/wgtx</a></p>
+<blockquote>
+<p>参考网站：<a href="http://www.jingwentian.com/t-135" target="_blank" rel="noopener">http://www.jingwentian.com/t-135</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2015/04/21/2015-04-21-08-17.html" title="移动Web前端框架 ( 移动开发框架整理 )">http://junhey.com/2015/04/21/2015-04-21-08-17.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+            <a href="/tags/移动/" rel="tag"># 移动</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/10/2015-02-11-03-36.html" rel="next" title="平台返回码策略">
+                <i class="fa fa-chevron-left"></i> 平台返回码策略
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/09/2015-05-09-08-12.html" rel="prev" title="linux下PHP扩展redis模块安装">
+                linux下PHP扩展redis模块安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

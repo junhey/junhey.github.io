@@ -1,0 +1,850 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="正则,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="一、校验数字的表达式 1 数字：^[0-9]*$ 2 n位的数字：^\d{n}$ 3 至少n位的数字：^\d{n,}$ 4 m-n位的数字：^\d{m,n}$ 5 零和非零开头的数字：^(0|[1-9][0-9]*)$ 6 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$ 7 带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$ 8 正数">
+<meta name="keywords" content="正则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用正则表达式大全">
+<meta property="og:url" content="http://junhey.com/2016/01/18/2016-01-18-08-47.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="一、校验数字的表达式 1 数字：^[0-9]*$ 2 n位的数字：^\d{n}$ 3 至少n位的数字：^\d{n,}$ 4 m-n位的数字：^\d{m,n}$ 5 零和非零开头的数字：^(0|[1-9][0-9]*)$ 6 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$ 7 带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$ 8 正数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用正则表达式大全">
+<meta name="twitter:description" content="一、校验数字的表达式 1 数字：^[0-9]*$ 2 n位的数字：^\d{n}$ 3 至少n位的数字：^\d{n,}$ 4 m-n位的数字：^\d{m,n}$ 5 零和非零开头的数字：^(0|[1-9][0-9]*)$ 6 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$ 7 带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$ 8 正数">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2016/01/18/2016-01-18-08-47.html">
+
+
+
+
+
+  <title>常用正则表达式大全 | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2016/01/18/2016-01-18-08-47.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">常用正则表达式大全</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-18T00:47:28+00:00">
+                2016-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一、校验数字的表达式</p>
+<p>1 数字：<br>^[0-9]*$</p>
+<p>2 n位的数字：<br>^\d{n}$</p>
+<p>3 至少n位的数字：<br>^\d{n,}$</p>
+<p>4 m-n位的数字：<br>^\d{m,n}$</p>
+<p>5 零和非零开头的数字：<br>^(0|[1-9][0-9]*)$</p>
+<p>6 非零开头的最多带两位小数的数字：<br>^([1-9][0-9]*)+(.[0-9]{1,2})?$</p>
+<p>7 带1-2位小数的正数或负数：<br>^(-)?\d+(.\d{1,2})?$</p>
+<p>8 正数、负数、和小数：<br>^(-|+)?\d+(.\d+)?$</p>
+<p>9 有两位小数的正实数：<br>^[0-9]+(.[0-9]{2})?$</p>
+<p>10 有1~3位小数的正实数：<br>^[0-9]+(.[0-9]{1,3})?$</p>
+<p>11 非零的正整数：<br>^[1-9]\d<em>$<br>或<br>^([1-9][0-9]</em>){1,3}$<br>或<br>^+?[1-9][0-9]*$</p>
+<p>12 非零的负整数：<br>^-[1-9][]0-9”<em>$<br>或<br>^-[1-9]\d</em>$</p>
+<p>13 非负整数：<br>^\d+$<br>或<br> ^[1-9]\d*|0$</p>
+<p>14 非正整数：<br>^-[1-9]\d*|0$<br>或<br>^((-\d+)|(0+))$</p>
+<p>15 非负浮点数：<br>^\d+(.\d+)?$<br>或<br>^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0$</p>
+<p>16 非正浮点数：<br>^((-\d+(.\d+)?)|(0+(.0+)?))$<br>或<br>^(-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>))|0?.0+|0$</p>
+<p>17 正浮点数：<br>^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>$<br>或<br>^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$</p>
+<p>18 负浮点数：<br>^-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>)$<br>或<br> ^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$</p>
+<p>19 浮点数：<br>^(-?\d+)(.\d+)?$<br>或<br>^-?([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0)$</p>
+<p>二、校验字符的表达式</p>
+<p>1 汉字：<br>^[\u4e00-\u9fa5]{0,}$</p>
+<p>2 英文和数字：<br>^[A-Za-z0-9]+$<br>或<br>^[A-Za-z0-9]{4,40}$</p>
+<p>3 长度为3-20的所有字符：<br>^.{3,20}$</p>
+<p>4 由26个英文字母组成的字符串：<br>^[A-Za-z]+$</p>
+<p>5 由26个大写英文字母组成的字符串：<br>^[A-Z]+$</p>
+<p>6 由26个小写英文字母组成的字符串：<br>^[a-z]+$</p>
+<p>7 由数字和26个英文字母组成的字符串：<br>^[A-Za-z0-9]+$</p>
+<p>8 由数字、26个英文字母或者下划线组成的字符串：<br>^\w+$<br>或<br> ^\w{3,20}$</p>
+<p>9 中文、英文、数字包括下划线：<br>^[\u4E00-\u9FA5A-Za-z0-9_]+$</p>
+<p>10 中文、英文、数字但不包括下划线等符号：<br>^[\u4E00-\u9FA5A-Za-z0-9]+$<br>或<br>^[\u4E00-\u9FA5A-Za-z0-9]{2,20}$</p>
+<p>11 可以输入含有^%&amp;’,;=?$\”等字符：<br>[^%&amp;’,;=?$\x22]+</p>
+<p>12 禁止输入含有~的字符：<br>[^~\x22]+</p>
+<p>三、特殊需求表达式</p>
+<p>1 Email地址：<br>^\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*$</p>
+<p>2 域名：<br>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</p>
+<p>3 InternetURL：<br>[a-zA-z]+://[^\s]<em><br>或<br>^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]</em>)?$</p>
+<p>4 手机号码：<br>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</p>
+<p>5 电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<br>^((\d{3,4}-)|\d{3.4}-)?\d{7,8}$</p>
+<p>6 国内电话号码(0511-4405222、021-87888822)：<br>\d{3}-\d{8}|\d{4}-\d{7}</p>
+<p>7 身份证号(15位、18位数字)：<br>^\d{15}|\d{18}$</p>
+<p>8 短身份证号码(数字、字母x结尾)：<br>^([0-9]){7,18}(x|X)?$<br>或<br>^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</p>
+<p>9 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<br>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</p>
+<p>10 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<br>^[a-zA-Z]\w{5,17}$</p>
+<p>11 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10<br>之间)：<br>^(?=.<em>\d)(?=.</em>[a-z])(?=.*[A-Z]).{8,10}$</p>
+<p>12 日期格式：<br>^\d{4}-\d{1,2}-\d{1,2}</p>
+<p>13 一年的12个月(01～09和1～12)：<br>^(0?[1-9]|1[0-2])$</p>
+<p>14 一个月的31天(01～09和1～31)：<br>^((0?[1-9])|((1|2)[0-9])|30|31)$</p>
+<p>15 xml文件：<br>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\.[x|X][m|M][l|L]$</p>
+<p>16 中文字符的正则表达式：<br>[\u4e00-\u9fa5]</p>
+<p>17 双字节字符：<br>[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</p>
+<p>18 空白行的正则表达式：<br>\n\s*\r (可以用来删除空白行)</p>
+<p>19 HTML标记的正则表达式：<br>&lt;(\S<em>?)[^&gt;]</em>&gt;.<em>?&lt;/\1&gt;|&lt;.</em>? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</p>
+<p>20 首尾空白字符的正则表达式：<br>^\s<em>|\s</em>$或(^\s<em>)|(\s</em>$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</p>
+<p>21 腾讯QQ号：<br>[1-9][0-9]{4,} (腾讯QQ号从10000开始)</p>
+<p>22 中国邮政编码：<br>[1-9]\d{5}(?!\d) (中国邮政编码为6位数字)</p>
+<p>23 IP地址：<br>\d+.\d+.\d+.\d+ (提取IP地址时有用)</p>
+<p>24 IP地址：<br>((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</p>
+<p>25 钱的输入格式：</p>
+<p>1）.有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<br>^[1-9][0-9]*$</p>
+<p>2）.这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：<br>^(0|[1-9][0-9]*)$</p>
+<p>3）.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：<br>^(0|-?[1-9][0-9]*)$</p>
+<p>4）.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：<br>^[0-9]+(.[0-9]+)?$</p>
+<p>5）.必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：<br>^[0-9]+(.[0-9]{2})?$</p>
+<p>6）.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：<br>^[0-9]+(.[0-9]{1,2})?$</p>
+<p>7）.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：<br>^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</p>
+<p>8）.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：<br>^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$</p>
+<p>备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2016/01/18/2016-01-18-08-47.html" title="常用正则表达式大全">http://junhey.com/2016/01/18/2016-01-18-08-47.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/正则/" rel="tag"># 正则</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/14/2016-01-15-05-11.html" rel="next" title="菜鸟入门：阿里云服务器&amp;Centos系统">
+                <i class="fa fa-chevron-left"></i> 菜鸟入门：阿里云服务器&amp;Centos系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/31/2016-01-31-15-24.html" rel="prev" title="Linux(CentOS)nodejs项目部署">
+                Linux(CentOS)nodejs项目部署 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

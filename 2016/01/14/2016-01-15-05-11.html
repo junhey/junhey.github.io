@@ -1,0 +1,827 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="centos,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="完全是电脑hold不住文本挖掘的数据，正巧赶上阿里云免费试用，所以就去申请了ECS服务器。系统是：centos（linux redhat 社区化版本）默认的使用版本只有内IP，之后花钱升级之后有了公IP目前的需求：  两种方法连接服务器  （1）用putty或者xshell连接服务器（注意：填入的IP应该为公IP）（2）阿里云自带的管理链接服务器  shell的常见指令  （1）常见文件操作ls">
+<meta name="keywords" content="centos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸟入门：阿里云服务器&amp;amp;Centos系统">
+<meta property="og:url" content="http://junhey.com/2016/01/14/2016-01-15-05-11.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="完全是电脑hold不住文本挖掘的数据，正巧赶上阿里云免费试用，所以就去申请了ECS服务器。系统是：centos（linux redhat 社区化版本）默认的使用版本只有内IP，之后花钱升级之后有了公IP目前的需求：  两种方法连接服务器  （1）用putty或者xshell连接服务器（注意：填入的IP应该为公IP）（2）阿里云自带的管理链接服务器  shell的常见指令  （1）常见文件操作ls">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="菜鸟入门：阿里云服务器&amp;amp;Centos系统">
+<meta name="twitter:description" content="完全是电脑hold不住文本挖掘的数据，正巧赶上阿里云免费试用，所以就去申请了ECS服务器。系统是：centos（linux redhat 社区化版本）默认的使用版本只有内IP，之后花钱升级之后有了公IP目前的需求：  两种方法连接服务器  （1）用putty或者xshell连接服务器（注意：填入的IP应该为公IP）（2）阿里云自带的管理链接服务器  shell的常见指令  （1）常见文件操作ls">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2016/01/14/2016-01-15-05-11.html">
+
+
+
+
+
+  <title>菜鸟入门：阿里云服务器&amp;Centos系统 | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2016/01/14/2016-01-15-05-11.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">菜鸟入门：阿里云服务器&amp;Centos系统</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-14T21:11:00+00:00">
+                2016-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/server/" itemprop="url" rel="index">
+                    <span itemprop="name">server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>完全是电脑hold不住文本挖掘的数据，正巧赶上阿里云免费试用，所以就去申请了ECS服务器。<br>系统是：centos（linux redhat 社区化版本）<br>默认的使用版本只有内IP，之后花钱升级之后有了公IP<br>目前的需求：</p>
+<ol>
+<li>两种方法连接服务器</li>
+</ol>
+<p>（1）用putty或者xshell连接服务器（注意：填入的IP应该为公IP）<br>（2）阿里云自带的管理链接服务器</p>
+<ol start="2">
+<li>shell的常见指令</li>
+</ol>
+<p>（1）常见文件操作<br>ls        显示文件或目录<br>      -l           列出文件详细信息l(list)<br>     -a          列出当前目录下所有文件及目录，包括隐藏的a(all)</p>
+<p>mkdir         创建目录<br>     -p           创建目录，若无父目录，则创建p(parent)<br>cd               切换目录<br>touch          创建空文件<br>echo           创建带有内容的文件。<br>cat              查看文件内容<br>mv               移动或重命名<br>rm               删除文件<br>     -r            递归删除，可删除子目录及文件<br>     -f            强制删除<br>find              在文件系统中搜索某文件<br>wc                统计文本中行数、字数、字符数<br>grep             在文本文件中查找某个字符串<br>rmdir           删除空目录<br>tree             树形结构显示目录，需要安装tree包<br>pwd              显示当前目录<br>ln                  创建链接文件<br>more、less  分页显示文本文件内容<br>head、tail    显示文件头、尾内容<br>ctrl+alt+F1  命令行全屏模式</p>
+<p>（2）移动文件或文件夹</p>
+<p>mv [options] 源文件或目录 目标文件或目录<br>示例：<br>a、移动hscripts文件夹/目录下的所有文件，目录和子目录到tmp目录mv hscripts tmp<br>分析：在上述命令中，如果tmp目录已经存在，mv命令将移动hscripts文件夹/目录下的所有文件，目录和子目录到tmp目录。 如果没有tmp目录，它将重命名 hscripts目录为tmp目录。<br>b、移动多个文件/更多问价到另一目录<br>mv file1.txt tmp/file2.txt newdir<br>这个命令移动当前目录的file1.txt文件和tmp文件夹/目录的file2.txt文件到newdir目录。<br>参数：<br>-i：交互方式操作。如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问是否重写，要求用户回答”y”或”n”，这样可以避免误覆盖文件。<br>-f：禁止交互操作。mv操作要覆盖某个已有的目标文件时不给任何指示，指定此参数后i参数将不再起作用。</p>
+<p>（3）复制文件或文件夹</p>
+<p>cp [options] 来源档(source) 目的檔(destination)<br>参数：<br>-a ：相当于 -pdr 的意思；<br>-d ：若来源文件为连结文件的属性(link file)，则复制连结文件属性而非档案本身；<br>-f ：为强制 (force) 的意思，若有重复或其它疑问时，不会询问使用者，而强制复制；<br>-i ：若目的檔(destination)已经存在时，在覆盖时会先询问是否真的动作！<br>-l ：进行硬式连结 (hard link) 的连结档建立，而非复制档案本身；<br>-p ：连同档案的属性一起复制过去，而非使用预设属性；<br>-r ：递归持续复制，用于目录的复制行为；<br>-s ：复制成为符号连结文件 (symbolic link)，亦即『快捷方式』档案；<br>-u ：若 destination 比 source 旧才更新 destination ！<br>最后需要注意的，如果来源档有两个以上，则最后一个目的文件一定要是『目录』才行！<br>示例:<br>a、复制两个文件:<br>cp file1 file2<br>上述cp命令复制文件file1.php 的内容到文件file2.php中。<br>b、备份拷贝的文件:<br>cp -b file1.php file2.php<br>创建文件file1.php的带着符号 ‘~’的备份文件file2.php~。<br>c、复制文件夹和子文件夹:<br>cp -R scripts scripts1<br>上面的 cp 命令从 scripts 复制文件夹和子文件夹到 scripts1。</p>
+<ol start="3">
+<li>软件的安装</li>
+</ol>
+<p>（1）关于R<br>安装R程序，安装常用的packages，尝试着去跑一段R程序<br><a href="http://blog.csdn.net/lhyan792/article/details/6362014" target="_blank" rel="noopener">http://blog.csdn.net/lhyan792/article/details/6362014</a><br><a href="http://blog.csdn.net/wangxianshou/article/details/8740282" target="_blank" rel="noopener">http://blog.csdn.net/wangxianshou/article/details/8740282</a></p>
+<p>（2）关于python<br>使用python 默认的版本为2.5<br>a）版本升级</p>
+<p>下载，解压，编译，安装，这些都是常规操作了。据说系统自带的旧版本python被严重依赖，所以不能卸载原Python，这里选择全新安装。<br>tar -xvf Python-2.7.3.tgz<br>cd Python-2.7.3<br>./configure –prefix=/usr/local/python2.7<br>make<br>make install<br>安装好后可以运行一下Python看看是否正常了</p>
+<p>/usr/local/python2.7/bin/python2.7 -V<br>其他的文章提到python都是在/usr/local/bin目录里的，但是我没有找到，而是在/usr/local/python2.7/bin/里。</p>
+<p>接下来需要创建一个链接来使系统默认python变为python2.7。<br>ln -fs /usr/local/python2.7/bin/python2.7 /usr/bin/python</p>
+<p>运行python查看版本<br>python -V<br>进行更改后，yum果然无法运行了。修改/usr/bin/yum文件，将第一行的</p>
+<p>#!/usr/bin/python<br>中的python改为系统原有的python版本，我的如下：</p>
+<p>#!/usr/bin/python2.6</p>
+<p>参考：<a href="http://www.phodal.com/blog/install-python27-on-centos/" target="_blank" rel="noopener">http://www.phodal.com/blog/install-python27-on-centos/</a></p>
+<p>b）安装算法包</p>
+<p><a href="http://blog.sina.com.cn/s/blog_7673d4a50102v06i.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_7673d4a50102v06i.html</a></p>
+<ol start="4">
+<li>熟悉linux环境</li>
+</ol>
+<p><a href="http://www.cnblogs.com/ssgblue/archive/2011/08/02/2125123.html" target="_blank" rel="noopener">http://www.cnblogs.com/ssgblue/archive/2011/08/02/2125123.html</a>  vi的使用方法<br>ctrl+d 关闭程序</p>
+<ol start="5">
+<li>图形化的系统界面</li>
+</ol>
+<p><a href="http://help.aliyun.com/view/13435408.html" target="_blank" rel="noopener">http://help.aliyun.com/view/13435408.html</a></p>
+<ol start="6">
+<li>文件的传输（FTP）</li>
+</ol>
+<p>winscp 搞定</p>
+<ol start="7">
+<li>查看空间使用情况</li>
+</ol>
+<p>df -hl</p>
+<p>参考网址：<a href="http://www.douban.com/note/469628969/" target="_blank" rel="noopener">http://www.douban.com/note/469628969/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2016/01/14/2016-01-15-05-11.html" title="菜鸟入门：阿里云服务器&amp;Centos系统">http://junhey.com/2016/01/14/2016-01-15-05-11.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/centos/" rel="tag"># centos</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/11/2016-01-11-09-50.html" rel="next" title="Jquery CDN">
+                <i class="fa fa-chevron-left"></i> Jquery CDN
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/18/2016-01-18-08-47.html" rel="prev" title="常用正则表达式大全">
+                常用正则表达式大全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,806 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="webstorm,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。 下载了软件webstorm软件的tar.gz格式的软件包该如何安装？ 这里给一种解决方法，步骤： 1.sudo apt-get install default-jdk  2.然后将webstorm解压，运行bin/webstorm.sh，命令行：sh bin/w">
+<meta name="keywords" content="webstorm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu下webstorm软件的何安装？">
+<meta property="og:url" content="http://junhey.com/2016/04/05/2016-04-06-05-14.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。 下载了软件webstorm软件的tar.gz格式的软件包该如何安装？ 这里给一种解决方法，步骤： 1.sudo apt-get install default-jdk  2.然后将webstorm解压，运行bin/webstorm.sh，命令行：sh bin/w">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu下webstorm软件的何安装？">
+<meta name="twitter:description" content="WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。 下载了软件webstorm软件的tar.gz格式的软件包该如何安装？ 这里给一种解决方法，步骤： 1.sudo apt-get install default-jdk  2.然后将webstorm解压，运行bin/webstorm.sh，命令行：sh bin/w">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2016/04/05/2016-04-06-05-14.html">
+
+
+
+
+
+  <title>ubuntu下webstorm软件的何安装？ | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2016/04/05/2016-04-06-05-14.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ubuntu下webstorm软件的何安装？</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-05T21:14:00+00:00">
+                2016-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">Editor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。</p>
+<p>下载了软件webstorm软件的tar.gz格式的软件包该如何安装？</p>
+<p>这里给一种解决方法，步骤：</p>
+<p>1.sudo apt-get install default-jdk </p>
+<p>2.然后将webstorm解压，运行bin/webstorm.sh，命令行：sh bin/webstorm.sh，至此webstorm安装完成。</p>
+<p>不过 WebStorm 默认情况下是需要收费的，可以申请为开源项目的贡献者来获得 licenses。</p>
+<ul>
+<li>安装插件</li>
+</ul>
+<p>安装完成后，在 File - Settings - Plugins，选择需要安装的插件，例如 AngularJS、Markdown 等。</p>
+<ul>
+<li>设置项目</li>
+</ul>
+<p>在 File - Settings - Directories 下，通过 Add content Root 来设置我们的项目路径</p>
+<p>在 File - Settings - JavaScript - Libraries 下，勾选想要支持的库，建议全部勾上（如 NodeJS）。</p>
+<ul>
+<li>设置外观、字体</li>
+</ul>
+<p>在 File - Settings - Editor - Colors &amp; Fonts - Font 下，选择自己想要的主题，然后 Save as… 保存自己想要的主题名称，设置字体为Ubuntu Mono，字体设置为 16（貌似有点小，相当于 Eclipse 下的 12）</p>
+<ul>
+<li>显示行数</li>
+</ul>
+<p>在 File - Settings - Appearance 下，勾选 Show line numbers 选项。</p>
+<p>下面分享网上的一些webstorm注册码：<br> User Name:<br>EMBRACE<br>License Key:<br>===== LICENSE BEGIN =====<br>24718-12042010<br>00001h6wzKLpfo3gmjJ8xoTPw5mQvY<br>YA8vwka9tH!vibaUKS4FIDIkUfy!!f<br>3C”rQCIRbShpSlDcFT1xmJi5h0yQS6<br>===== LICENSE END =====<br>PhpStorm注册码<br>User Name:<br>EMBRACE<br> License Key:<br>===== LICENSE BEGIN =====<br>43136-12042010<br>00002UsvSON704l”dILe1PVx3y4”B3<br>49AU6oSDJrsjE8nMOQh”8HTDJHIUUh<br>gd1BebYc5U”6OxDbVsALB4Eb10PW8”<br>===== LICENSE END =====<br>webStorm :<br>UserName:William<br>===== LICENSE BEGIN =====<br>45550-12042010<br>00001SzFN0n1bPII7FnAxnt0DDOPJA<br>INauvJkeVJBuE5bqLEznccE4tet6tr<br>RiyoMxDK8oDY93tx!ipPyGmqYYeWxS<br>===== LICENSE END =====<br>UserName:Microsoft<br>===== LICENSE BEGIN =====<br>44827-12042010<br>00001xZTATXBeJGHI0CFFRIdOKjhQ7<br>eiwIjgK7qohmwGSZRUK!lINYbpNQKk<br>5AtC16jzcy6KWlkBBjTZXwL8fnebTM<br>===== LICENSE END =====<br>UserName:ChinaRed<br>===== LICENSE BEGIN =====<br>41806-12042010<br>000006gMpIpRoMPJdqqPfxIYyr5UPx<br>fTuYnZxklVYrNOZUHL6YnHTAUM4zqe<br>qNrt8QzsZERfO”XiHa802ejK9GtcSj<br>===== LICENSE END =====<br>rubyMine :<br>UserName:William<br>===== LICENSE BEGIN =====<br>73770-12042010<br>00000LsPnluU7HZh4TgJoxNDbnCr!T<br>0yDfranplDJF4ESFHxfhN6dMBEogxt<br>S!qZH7LvIjab”9qbXrSfL9NitEBODm<br>===== LICENSE END =====<br>UserName:Microsoft<br>===== LICENSE BEGIN =====<br>05071-12042010<br>00001DGDB7Ih6YT6ApG0Uh4wxMwJqf<br>UjDDJvi5mX0yJS!72q8ZrLhKQfusV”<br>NVSB9iV!lO1tRbt265”z0vZJBwpl!9<br>===== LICENSE END =====<br>UserName:ChinaRed<br>===== LICENSE BEGIN =====<br>26405-12042010<br>00001cYtAkKGNyQA7Er6A9e4oS2Y”I<br>fK”d”APYe591kwLAHVZ7ieFmfoTKTS<br>90BTaTdrTg36JEivKlxfVaDszIkWuM<br>===== LICENSE END =====<br>phpStorm :<br>UserName:William<br>===== LICENSE BEGIN =====<br>56731-12042010<br>00001F”L73xP5zfOyL58”Vg0hu”R8S<br>!aPyCtkqgqc5fEvdQLlLs5a9gzvAcu<br>!2Gb!gp9kfKoAp1e81dVuhM”a8OJ4v<br>===== LICENSE END =====<br>UserName:Microsoft<br>===== LICENSE BEGIN =====<br>06656-12042010<br>00002NFsdQw64GSoAeS1!oxQRM!H8k<br>Rh3soGkXar1UJa27G0Gx3uz4FEq6Fb<br>CW09ado0neq”3gqd3lZ8KnE303G”MP<br>===== LICENSE END =====<br>UserName:ChinaRed<br>===== LICENSE BEGIN =====<br>83865-12042010<br>00001jJvs5lu13QqsSxk1XXwwpiGL1<br>4GGM”RKB0xBaYtK6Uh4NVG26”TBhTA<br>HNKvcsV38NwMho1Wdy75KY61SwSdVQ<br>===== LICENSE END =====<br>pyCharm :<br>UserName:William<br>===== LICENSE BEGIN =====<br>43064-12042010<br>00002qm1!PHwV!dC19Cvu04E6IXZJ9<br>GN”RaF03!bwPE”x3RZbg7ctJld7yZl<br>XkVf40g3JJGG4Ibbbg4”HQPwWJWSFU<br>===== LICENSE END =====<br>UserName:Microsoft<br>===== LICENSE BEGIN =====<br>77380-12042010<br>000017q0LbsOLEIcYF3VRZszWAYE”K<br>CYfpWmqrUTJy”ROE03pXMWLZ6Z9jbh<br>cccsmd3P32vdo!L4tnEkp1jrOuySvx<br>===== LICENSE END =====<br>UserName:ChinaRed<br>===== LICENSE BEGIN =====<br>42852-12042010<br>00000zw1KaqXWsbN7MiExhdvN!PIjf<br>ZDCOi0vxBEGX9QDUYIyvr0768OloCU<br>FUZ4Evyh4lNEFKRDEVnKye9W2DYxPp<br>===== LICENSE END =====<br>WebStorm9:<br>用户名 oschina<br>注册码<br>===== LICENSE BEGIN =====<br>7362-D18089T<br>00000xmyY1VfVxjkElWULKcA5XHbfN<br>5qjOh3fgGZvNXH6ZhNShaoflITUXPF<br>2YBJzmziQfirMgKbsaT8fCS2hzWIW0<br>===== LICENSE END =====<br>WebStorm10:<br>用户名 oschina<br>注册码<br>===== LICENSE BEGIN =====<br>4383-D76624T<br>00001f5bo5TyzKTl8s98xBQJ4Ups!f<br>bcboOWvzs3Fm0cE3p66!G6D!Pg!vj7<br>B9BeKhPH5nE52Z0dPANreJWLGoZi5q<br>===== LICENSE END =====<br>PhpStorm9:<br>用户名 oschina<br>注册码<br>===== LICENSE BEGIN =====<br>9362-D71509T<br>00002vG0Ew9WZL”mSK1bK4Wp9cPnPS<br>owS6WZR26Dlk8jXTleDpboiESy0”4E<br>TEt2SY7kcmkTRSHHoDE6sqksYv!VPp<br>===== LICENSE END =====<br>IDEA13:<br>用户名 oschina<br>注册码 73702-JMMWT-BHTL0-E18XX-RBI3G-NAMK0<br>IDEA14<br>用户名 oschina<br>注册码 81141-4T5I0-G3YYX-K21F4-F87VZ-45KF6<br>Pycharm13<br>用户名 oschina<br>注册码<br>===== LICENSE BEGIN =====<br>9902-D64920T<br>00001MnCK6!znU5XyNoSmasdacmFyr<br>92JMZfrYteQbQQQHs!5Pm9ErjesYLa<br>cfPAwEiFmbIjqpop9YHkqEuXh51ZjU<br>===== LICENSE END =====</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2016/04/05/2016-04-06-05-14.html" title="ubuntu下webstorm软件的何安装？">http://junhey.com/2016/04/05/2016-04-06-05-14.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webstorm/" rel="tag"># webstorm</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/29/2016-03-30-05-21.html" rel="next" title="安装好ubuntu15之后需要做的事">
+                <i class="fa fa-chevron-left"></i> 安装好ubuntu15之后需要做的事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/13/2016-04-14-04-46.html" rel="prev" title="博客系统的数据库设计">
+                博客系统的数据库设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

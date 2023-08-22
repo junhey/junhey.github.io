@@ -1,0 +1,863 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="linux,node,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="系统：CentOS 64位（查看系统位数请执行命令：getconf LONG_BIT） 1、到http://nodejs.org/download/找到系统对应的安装文件 执行如下命令： wget http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz (稳定版) //wget  http://nodejs.org/dist/v0.10.22/node-v">
+<meta name="keywords" content="linux,node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux(CentOS)nodejs项目部署">
+<meta property="og:url" content="http://junhey.com/2016/01/31/2016-01-31-15-24.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="系统：CentOS 64位（查看系统位数请执行命令：getconf LONG_BIT） 1、到http://nodejs.org/download/找到系统对应的安装文件 执行如下命令： wget http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz (稳定版) //wget  http://nodejs.org/dist/v0.10.22/node-v">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux(CentOS)nodejs项目部署">
+<meta name="twitter:description" content="系统：CentOS 64位（查看系统位数请执行命令：getconf LONG_BIT） 1、到http://nodejs.org/download/找到系统对应的安装文件 执行如下命令： wget http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz (稳定版) //wget  http://nodejs.org/dist/v0.10.22/node-v">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2016/01/31/2016-01-31-15-24.html">
+
+
+
+
+
+  <title>Linux(CentOS)nodejs项目部署 | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2016/01/31/2016-01-31-15-24.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux(CentOS)nodejs项目部署</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-31T07:24:00+00:00">
+                2016-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/server/" itemprop="url" rel="index">
+                    <span itemprop="name">server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>系统：CentOS 64位（查看系统位数请执行命令：getconf LONG_BIT）</p>
+<p>1、到<a href="http://nodejs.org/download/找到系统对应的安装文件" target="_blank" rel="noopener">http://nodejs.org/download/找到系统对应的安装文件</a></p>
+<p>执行如下命令：</p>
+<p>wget <a href="http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz" target="_blank" rel="noopener">http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz</a> (稳定版)</p>
+<p>//wget  <a href="http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz" target="_blank" rel="noopener">http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz</a> （最新版）</p>
+<p>2、解压</p>
+<p> tar -xvf node-v0.10.22-linux-x64.tar.gz</p>
+<p>cd node_xxx </p>
+<p>3、安装</p>
+<p>yum install gcc-c++(if has no c compiler)</p>
+<p>./configure</p>
+<p>4、安装nodejs</p>
+<p>make install</p>
+<p>如果python版本过低，可能会报错，请先升级<a href="http://gavinshaw.blog.51cto.com/385947/610585" target="_blank" rel="noopener">http://gavinshaw.blog.51cto.com/385947/610585</a></p>
+<p>这个一定有用：<a href="http://www.cyberciti.biz/faq/wget-example-download-from-https-web-sites/" target="_blank" rel="noopener">http://www.cyberciti.biz/faq/wget-example-download-from-https-web-sites/</a></p>
+<p>5、安装完毕，接下来就可以利用node命令启动服务了。</p>
+<p>cd /$app_path/</p>
+<p>node /nodejs/app.js</p>
+<p>值得注意的是，我们使用node命令启动后，服务会因为我们关闭这个操作窗口而挂断，解决办法是使用nohup命令不挂断执行。</p>
+<p>以下为我在项目中使用的发布脚本：</p>
+<p>rm -rf /data/webapps/bds_nodejs</p>
+<p>cd /data/trunk/bds_nodejs<br>svn update .<br>svn export /data/trunk/bds_nodejs /data/webapps/bds_nodejs</p>
+<p>kill -9 ‘netstat -nlp | grep 3000 |awk ‘{print $7}’ | awk -F/ ‘{print $1}’’<br>cd /data/webapps/bds_nodejs<br>nohup node app.js &amp;</p>
+<p>如果遇到编码问题，请把这段shell脚本保存为ANSI格式再上传到svn服务器上，或者直接在linux上使用vi编写。</p>
+<hr>
+<p>make install 以后，有点系统直接执行node -v会报命令不存在的错误，</p>
+<p>这个时候就要配置一下node的环境变量。</p>
+<p>1、先找到node安装在哪里</p>
+<p>whereis node</p>
+<p>找到node命令的路径。</p>
+<p>2、打开配置文件，并增加path</p>
+<p>vi /etc/profile</p>
+<p>增加：</p>
+<p>export PATH = /usr/local/bin</p>
+<p>3、修改完以后执行 source profile即可生效。</p>
+<p>附：</p>
+<p>环境变量的查看<br>（1）使用echo命令查看单个环境变量。例如：<br>echo $PATH<br>（2）使用env查看所有环境变量。例如：<br>env<br>（3）使用set查看所有本地定义的环境变量。例如：<br>set<br>另外，unset可以删除指定的环境变量。</p>
+<p>常用的环境变量<br>PATH 决定了shell将到哪些目录中寻找命令或程序<br>HOME 当前用户主目录<br>HISTSIZE　历史记录数<br>LOGNAME 当前用户的登录名<br>HOSTNAME　指主机的名称<br>SHELL 当前用户Shell类型<br>LANGUGE 　语言相关的环境变量，多语言可以修改此环境变量<br>MAIL　当前用户的邮件存放目录<br>PS1　基本提示符，对于root用户是#，对于普通用户是$</p>
+<p>针对生产环境中express应用安装部署上需要注意的问题。</p>
+<blockquote>
+<p>设置NODE_ENV为“production”<br>确保应用的自动重启<br>将应用部署一个集群中<br>缓存请求结果<br>使用负载均衡<br>使用反向代理</p>
+</blockquote>
+<ol>
+<li>设置运行环境变量</li>
+</ol>
+<p>一般我们设置node环境变量有两种，分别是 development 和 production。设置环境变量为production将会使得express应用</p>
+<p>缓存视图模板<br>缓存css文件<br>生成更少的冗余错误信息<br>另外如果大家感兴趣的话可以查看这篇文章环境变量测试，这里作者对于设置该变量前后做了一些性能上的对比，非常详细。</p>
+<p>如果我们使用upstart来管理应用的话我们需要配置文件中加入环境变量</p>
+<p>#/etc/init/env.conf<br>env NODE_ENV=production<br>如果是使用systemd来管理的话，则修改配置文件如下：</p>
+<p>#/etc/systemd/system/myservice.service<br>Environment=NODE_ENV=production<br>2.确保自启动</p>
+<p>这里自启动不仅仅指的是如何在程序异常终止之后启动而且还要保证程序在操作系统重启之后能自启动。这里我们分别介绍下两种情况。</p>
+<p>使用一个进程管理器<br>进程管理器一般可以帮助我们，获得进程的运行性能和资源的消耗，动态的修改配置提升性能，集群控制。这里我么推荐的一般可以使用strongloop process manager或者pm2还有forever，同样详细的参考如下链接进程管理器比较<br>通过上述的比较我们可以看出，strongloop的进程管理器支持的特性更丰富一些，特别是查看cpu占用堆占用，集成操作系统脚本，远程管理集群等等。</p>
+<p>随系统启动的程序自启动<br>随系统启动的程序，我们可以使用之前的进程管理器，forever应该是不支持的。其他的都可以生成对应的启动脚本，当操作系统启动的时候，进程管理器启动，并带动程序的启动。或者我们可以直接配置使用systemd等方式来管理进程的开机启动。<br>我们这里简单的通过介绍systemd的方式来介绍如何设置程序的随系统启动。systemd是一个linux系统的服务管理器。一个systemd的配置文件被称作为unit file.以.service为后缀。</p>
+<p>[Unit]<br>Description=Awesome Express App</p>
+<p>[Service]<br>Type=simple<br>ExecStart=/usr/local/bin/node /projects/myapp/index.js<br>WorkingDirectory=/projects/myapp</p>
+<p>User=nobody<br>Group=nogroup</p>
+<p>#Environment variables:<br>Environment=NODE_ENV=production</p>
+<p>#Allow many incoming connections<br>LimitNOFILE=infinity</p>
+<p>#Allow core dumps for debugging<br>LimitCORE=infinity</p>
+<p>StandardInput=null<br>StandardOutput=syslog<br>StandardError=syslog<br>Restart=always</p>
+<p>[Install]<br>WantedBy=multi-user.target</p>
+<ol start="3">
+<li>将app运行在一个集群中</li>
+</ol>
+<p>在多核心处理上运行的应用，可以通过使用cluster模块启动多个实例运行在不同的处理器上。并在多个实例上实现“负载均衡”。<br>image<br>但是对于不同的实例，由于内存空间的隔离，导致所有的程序对象都是本地的，无法实现共享，但是我们可以借助于redis这样的工具实现对象的共享。并且对于某个进程的终端不会影响其他进程的处理，只需要在编写代码的时候记录此次终端并生成一个新的实例即可。</p>
+<p>我们可以使用node的cluster模块（需要编写代码实现）或者是strongloop的进程管理器来处理，并且不需要修改代码。strongloop PM将根据cpu的数目自动的生成多个进程，并且可以手动调整该值。</p>
+<ol start="4">
+<li>缓存请求</li>
+</ol>
+<p>使用缓存，可以极大的提升响应速度，而不需要对于重复的请求做重复的操作。我们可以使用nginx缓存配置来配置缓存</p>
+<ol start="5">
+<li>使用负载均衡</li>
+</ol>
+<p>单一的express进程服务，不管如何优化都无法达到一个很高的性能需求，特别是对于一个拥有很多用户的web应用。我们可以通过使用一个负载均衡器来完成应用的水平的扩展。比如使用nginx或者HAProxy来完成负载均衡。在使用负载均衡的时候，我们可能需要确保每一个请求关联相对应的会话ID落到同一个进程上。这里有一篇文章可以供参考，了解如何配置负载均衡socket.io配置负载均衡</p>
+<p>另外strongloop pm可以很好的与nginx配合设置负载均衡。</p>
+<ol start="6">
+<li>反向代理服务</li>
+</ol>
+<p>反向代理服务器一般设置在请求入口处，完成错误页面处理，压缩处理，缓存和静态文件处理，负载均衡操作等等。具体的可参考nginx或者HAProxy的配置来完成反向代理服务的搭建。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2016/01/31/2016-01-31-15-24.html" title="Linux(CentOS)nodejs项目部署">http://junhey.com/2016/01/31/2016-01-31-15-24.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/18/2016-01-18-08-47.html" rel="next" title="常用正则表达式大全">
+                <i class="fa fa-chevron-left"></i> 常用正则表达式大全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/31/2016-02-01-07-48.html" rel="prev" title="git指令速查文档（纯手工打造）">
+                git指令速查文档（纯手工打造） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

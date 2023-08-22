@@ -1,0 +1,908 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="javascript,wxapp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="微信小程序-移动端商城 安装 git 复制和拉取分支  123456789101112131415git clone ssh://git@gitlab.modernavenue.com:10022/fe/wx-app.gitcd wx-appgit checkout -b canudilo-productgit pull origin canudilo-productgit checkout pr">
+<meta name="keywords" content="javascript,wxapp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序-移动端商城">
+<meta property="og:url" content="http://junhey.com/2017/07/06/wxapp-develop-section.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="微信小程序-移动端商城 安装 git 复制和拉取分支  123456789101112131415git clone ssh://git@gitlab.modernavenue.com:10022/fe/wx-app.gitcd wx-appgit checkout -b canudilo-productgit pull origin canudilo-productgit checkout pr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序-移动端商城">
+<meta name="twitter:description" content="微信小程序-移动端商城 安装 git 复制和拉取分支  123456789101112131415git clone ssh://git@gitlab.modernavenue.com:10022/fe/wx-app.gitcd wx-appgit checkout -b canudilo-productgit pull origin canudilo-productgit checkout pr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2017/07/06/wxapp-develop-section.html">
+
+
+
+
+
+  <title>微信小程序-移动端商城 | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2017/07/06/wxapp-develop-section.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">微信小程序-移动端商城</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T03:46:09+00:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="微信小程序-移动端商城"><a href="#微信小程序-移动端商城" class="headerlink" title="微信小程序-移动端商城"></a>微信小程序-移动端商城</h1><hr>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>git 复制和拉取分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://git@gitlab.modernavenue.com:10022/fe/wx-app.git</span><br><span class="line">cd wx-app</span><br><span class="line">git checkout -b canudilo-product</span><br><span class="line">git pull origin canudilo-product</span><br><span class="line">git checkout product</span><br><span class="line">git checkout -b 01men-product</span><br><span class="line">git pull origin 01men-product</span><br><span class="line">git checkout --orphan release</span><br><span class="line">git reset --hard</span><br><span class="line">git pull origin release</span><br><span class="line">git checkout -b canudilo-release</span><br><span class="line">git pull origin canudilo-release</span><br><span class="line">git checkout release</span><br><span class="line">git checkout -b 01men-release</span><br><span class="line">git pull origin 01men-release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加 git 钩子<br>新建文件 wx-app/.git/hooks/pre-push，文件内容为</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">while read local_ref local_sha remote_ref remote_sha</span><br><span class="line">do</span><br><span class="line">    branch=$(git rev-parse --symbolic --abbrev-ref $local_ref)</span><br><span class="line">    if [ &quot;release&quot; == &quot;$branch&quot; ]; then</span><br><span class="line">        git checkout canudilo-release</span><br><span class="line">        git pull -r origin canudilo-release</span><br><span class="line">        git rebase release</span><br><span class="line">        git push -f origin canudilo-release</span><br><span class="line">        git checkout 01men-release</span><br><span class="line">        git pull -r origin 01men-release</span><br><span class="line">        git rebase release</span><br><span class="line">        git push -f origin 01men-release</span><br><span class="line">    fi</span><br><span class="line">    if [ &quot;product&quot; == &quot;$branch&quot; ]; then</span><br><span class="line">        git checkout canudilo-product</span><br><span class="line">        git pull -r origin canudilo-product</span><br><span class="line">        git rebase product</span><br><span class="line">        git push -f origin canudilo-product</span><br><span class="line">        git checkout 01men-product</span><br><span class="line">        git pull -r origin 01men-product</span><br><span class="line">        git rebase product</span><br><span class="line">        git push -f origin 01men-product</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>安装 npm 模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd wx-app</span><br><span class="line">npm install</span><br><span class="line">npm install gulp -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装微信开发者工具</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="noopener">微信开发者工具</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/index.html" target="_blank" rel="noopener">开发文档</a></p>
+</blockquote>
+<ul>
+<li>导入项目代码</li>
+</ul>
+<blockquote>
+<p>注：需要有开发者权限，’小程序ID’</p>
+</blockquote>
+<ol>
+<li><p>卡奴AppID(小程序ID) wx31674f508491c876</p>
+</li>
+<li><p>01men AppID(小程序ID) wx6e71dc39094db668</p>
+</li>
+</ol>
+<p>项目目录选择 wx-app\src (dist目录为发布时用)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//测试微信号</span><br><span class="line">modernavenuetest</span><br><span class="line">123456test(原密码18565538230test)</span><br></pre></td></tr></table></figure>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
+<li>app.js — 对本页面的窗口表现进行配置。</li>
+<li>app.json — 对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等。</li>
+<li><p>app.wxss — 接受一个数组，每一项都是字符串，来指定小程序由哪些页面组成。</p>
+</li>
+<li><p>images — 存放项目图片</p>
+</li>
+<li>pages — 存放项目页面相关文件</li>
+<li>pages/common — 存放独立wxss样式文件和template,可import引入</li>
+<li>utils — 存放utils文件，可require引入  </li>
+<li>configs — 配置文件 api 等配置</li>
+<li>components — 模块组件 </li>
+</ul>
+<h3 id="开发步骤和细节"><a href="#开发步骤和细节" class="headerlink" title="开发步骤和细节"></a>开发步骤和细节</h3><ul>
+<li>图片资源</li>
+</ul>
+<p>有关微信小程序的前台资源，已放在  cache1 上的<br>    /home/modern/datas/wxapp<br>目录下，以后这类的全在这里 ( 相关的 nginx 都已改好 )</p>
+<p>默认对应的测试/正式访问的 url 如下：<br><a href="https://testimage.modernavenue.com/wxapp/01men/activity/home-c1.jpg" target="_blank" rel="noopener">https://testimage.modernavenue.com/wxapp/01men/activity/home-c1.jpg</a><br><a href="http://staticm.modernavenue.com/wxapp/01men/activity/home-c1.jpg" target="_blank" rel="noopener">http://staticm.modernavenue.com/wxapp/01men/activity/home-c1.jpg</a><br>如果后续产品那提出来，微信小程序的要修改相关显示资源图片，上传与下载的目录对应在这里<br>    /home/modern/datas/wxapp/(小程序名，如：01men、canudilo)/… </p>
+<ul>
+<li>页面生命周期</li>
+</ul>
+<ol>
+<li>小程序注册完成后，加载页面，触发onLoad方法。</li>
+<li>页面载入后触发onShow方法，显示页面。</li>
+<li>首次显示页面，会触发onReady方法，渲染页面元素和样式，一个页面只会调用一次。</li>
+<li>当小程序后台运行或跳转到其他页面时，触发onHide方法。</li>
+<li>当小程序有后台进入到前台运行或重新进入页面时，触发onShow方法。</li>
+<li>当使用重定向方法wx.redirectTo(OBJECT)或关闭当前页返回上一页wx.navigateBack()，触发onUnload</li>
+</ol>
+<p>常规页面A：onLoad()–&gt;onShow()–&gt;onReady()–&gt;onHide()–&gt;onUnload()<br>释义：<br>onLoad()：监听页面加载，一个页面只会调用一次<br>onShow()：监听页面显示，每次打开页面都会调用一次<br>onReady()：监听页面初次渲染完成，一个页面只会调用一次，代表页面加载完毕，视图层和逻辑层可进行交互<br>onHide()：监听页面隐藏，当页面被覆盖或进入后台执行<br>onUnload()：监听页面卸载，当页面被关闭或内存不足主动销毁页面</p>
+<p>wx.navigateTo跳转状态下，页面A和页面B的生命周期逻辑<br>进入A页面：A执行onLoad()–&gt;onShow()–&gt;onReady()；<br>A页面navigateTo B页面：A执行onHide()，B执行onLoad()–&gt;onShow()–&gt;onReady()；<br>B页面返回A页面：B执行onUnload()，A执行onReady()；<br>退出A页面：A执行onUnload()。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data:&#123;&#125;,</span><br><span class="line">  onLoad:function(options)&#123;</span><br><span class="line">    // 页面初始化 options为页面跳转所带来的参数</span><br><span class="line">  &#125;,</span><br><span class="line">  onReady:function()&#123;</span><br><span class="line">    // 页面渲染完成</span><br><span class="line">  &#125;,</span><br><span class="line">  onShow:function()&#123;</span><br><span class="line">    // 页面显示</span><br><span class="line">  &#125;,</span><br><span class="line">  onHide:function()&#123;</span><br><span class="line">    // 页面隐藏</span><br><span class="line">  &#125;,</span><br><span class="line">  onUnload:function()&#123;</span><br><span class="line">    // 页面关闭</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>异步获取数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var _this = this;</span><br><span class="line">var param = fetch.requestBase();</span><br><span class="line">param.orderId = e.currentTarget.dataset.id;</span><br><span class="line">var url=config.host+config.orderDelet;</span><br><span class="line">fetch.fetch(&apos;GET&apos;,url,param,(err,res)=&gt;&#123;</span><br><span class="line">    if (res.ecode === &apos;0000&apos;) &#123;</span><br><span class="line">        console.log(res.data);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        fetch.defaultErrorDeal(url,&apos;请求错误&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="版本控制流程"><a href="#版本控制流程" class="headerlink" title="版本控制流程"></a>版本控制流程</h3><ul>
+<li>分支</li>
+</ul>
+<p>release 预发布测试分支<br>product 发布主分支</p>
+<ul>
+<li>开发</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout product  </span><br><span class="line">git checkout -b BRANCH</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;COMMENT&apos;</span><br></pre></td></tr></table></figure>
+<p>BRANCH 分支按照develop- feature- fixbug-  release- 来命名 简写dev-  fea-  fix-  rel-</p>
+<p>COMMENT 主要写功能点 bug 等</p>
+<ul>
+<li>测试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout release</span><br><span class="line">git pull origin release</span><br><span class="line">git merge --no-ff BRANCH</span><br><span class="line">git push origin release</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发布</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git push origin BRANCH  </span><br><span class="line">https://gitlab.modernavenue.com/  </span><br><span class="line">Merge Requests --&gt; New Merge Requests --&gt; Select source branch (BRANCH) --&gt; Compare branches and continue  </span><br><span class="line">选择 Assignee, 勾选 Remove source branch when merge request is accepted. --&gt; Save Changes  </span><br><span class="line">如果有冲突，需要进行以下操作  </span><br><span class="line">git checkout product  </span><br><span class="line">git pull origin product  </span><br><span class="line">git checkout BRANCH  </span><br><span class="line">git merge --no-ff product  </span><br><span class="line">git push origin BRANCH</span><br></pre></td></tr></table></figure>
+<h3 id="不同小程序"><a href="#不同小程序" class="headerlink" title="不同小程序"></a>不同小程序</h3><ul>
+<li>分支<br>canudilo-product 卡奴发布分支<br>01men-product 01men发布分支<br>canudilo-release 卡奴测试分支<br>01men-release 01men测试分支  </li>
+</ul>
+<p>更新以上分支需要增加-r 参数（rebase）  </p>
+<blockquote>
+<p>git pull -r origin BRANCH  </p>
+</blockquote>
+<ul>
+<li>配置区别<br>app.json 首页进入不同修改，标题修改<br>configs/config.js 请求接口平台参数不同修改  </li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2017/07/06/wxapp-develop-section.html" title="微信小程序-移动端商城">http://junhey.com/2017/07/06/wxapp-develop-section.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/wxapp/" rel="tag"># wxapp</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/20/centos搭建git过程.html" rel="next" title="centos搭建git过程">
+                <i class="fa fa-chevron-left"></i> centos搭建git过程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/19/mvc-mvp-mvvm.html" rel="prev" title="学习设计模式之MVC、MVP、MVVM">
+                学习设计模式之MVC、MVP、MVVM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序-移动端商城"><span class="nav-number">1.</span> <span class="nav-text">微信小程序-移动端商城</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">1.0.2.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发步骤和细节"><span class="nav-number">1.0.3.</span> <span class="nav-text">开发步骤和细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本控制流程"><span class="nav-number">1.0.4.</span> <span class="nav-text">版本控制流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同小程序"><span class="nav-number">1.0.5.</span> <span class="nav-text">不同小程序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

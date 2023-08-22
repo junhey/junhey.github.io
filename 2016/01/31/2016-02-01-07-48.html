@@ -1,0 +1,1010 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="疯狂的迈步" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="Git基本常用命令如下：12345678910111213141516171819202122232425262728293031mkdir： XX (创建一个空目录 XX指目录名)pwd：   显示当前目录的路径。git init    把当前的目录变成可以管理的git仓库，生成隐藏.git文件。git add XX   把xx文件添加到暂存区去。git commit –m “XX”  提交文件">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git指令速查文档（纯手工打造）">
+<meta property="og:url" content="http://junhey.com/2016/01/31/2016-02-01-07-48.html">
+<meta property="og:site_name" content="疯狂的迈步">
+<meta property="og:description" content="Git基本常用命令如下：12345678910111213141516171819202122232425262728293031mkdir： XX (创建一个空目录 XX指目录名)pwd：   显示当前目录的路径。git init    把当前的目录变成可以管理的git仓库，生成隐藏.git文件。git add XX   把xx文件添加到暂存区去。git commit –m “XX”  提交文件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2023-08-22T04:11:10.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git指令速查文档（纯手工打造）">
+<meta name="twitter:description" content="Git基本常用命令如下：12345678910111213141516171819202122232425262728293031mkdir： XX (创建一个空目录 XX指目录名)pwd：   显示当前目录的路径。git init    把当前的目录变成可以管理的git仓库，生成隐藏.git文件。git add XX   把xx文件添加到暂存区去。git commit –m “XX”  提交文件">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://junhey.com/2016/01/31/2016-02-01-07-48.html">
+
+
+
+
+
+  <title>git指令速查文档（纯手工打造） | 疯狂的迈步</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74974414-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d51179e92e94d3c0d5a2a062b2a5d2b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script","iimqk1p3xu");
+</script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/junhey"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:1;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">疯狂的迈步</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">疯狂的迈步（Junhey）</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://junhey.com/2016/01/31/2016-02-01-07-48.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="junhey">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="疯狂的迈步">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">git指令速查文档（纯手工打造）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-top">
+            
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-31T23:48:00+00:00">
+                2016-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">Editor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Git基本常用命令如下："><a href="#Git基本常用命令如下：" class="headerlink" title="Git基本常用命令如下："></a>Git基本常用命令如下：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">mkdir： XX (创建一个空目录 XX指目录名)</span><br><span class="line">pwd：   显示当前目录的路径。</span><br><span class="line">git init    把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</span><br><span class="line">git add XX   把xx文件添加到暂存区去。</span><br><span class="line">git commit –m “XX”  提交文件 –m 后面的是注释。</span><br><span class="line">git status   查看仓库状态</span><br><span class="line">git diff  XX   查看XX文件修改了那些内容</span><br><span class="line">git log    查看历史记录</span><br><span class="line">git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本</span><br><span class="line">(如果想回退到100个版本，使用git reset –hard HEAD~100 )</span><br><span class="line">cat XX  查看XX文件内容</span><br><span class="line">git reflog   查看历史记录的版本号id</span><br><span class="line">git checkout -- XX  把XX文件在工作区的修改全部撤销。</span><br><span class="line">git rm XX   删除XX文件</span><br><span class="line">git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库</span><br><span class="line">git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</span><br><span class="line">git clone https://github.com/tugenhua0707/testgit  从远程库中克隆</span><br><span class="line">git checkout –b dev  创建dev分支 并切换到dev分支上</span><br><span class="line">git branch  查看当前所有的分支</span><br><span class="line">git checkout master 切换回master分支</span><br><span class="line">git merge dev    在当前的分支上合并dev分支</span><br><span class="line">git branch –d dev 删除dev分支</span><br><span class="line">git branch name  创建分支</span><br><span class="line">git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</span><br><span class="line">git stash list 查看所有被隐藏的文件列表</span><br><span class="line">git stash apply 恢复被隐藏的文件，但是内容不删除</span><br><span class="line">git stash drop 删除文件</span><br><span class="line">git stash pop 恢复文件的同时 也删除文件</span><br><span class="line">git remote 查看远程库的信息</span><br><span class="line">git remote –v 查看远程库的详细信息</span><br><span class="line">git push origin master  Git会把master分支推送到远程库对应的远程分支上远程仓库。</span><br></pre></td></tr></table></figure>
+<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><ul>
+<li><p>复制一个已创建的仓库</p>
+<blockquote>
+<p>git clone ssh:<a href="mailto://user@admin.com" target="_blank" rel="noopener">//user@admin.com</a>/repo.git</p>
+</blockquote>
+</li>
+<li><p>创建一个新建的本地仓库</p>
+<blockquote>
+<p>git init</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="本地修改"><a href="#本地修改" class="headerlink" title="本地修改"></a>本地修改</h1><ul>
+<li><p>显示工作路径下全部已修改的文件</p>
+<blockquote>
+<p>git status</p>
+</blockquote>
+</li>
+<li><p>显示与上次提交版本文件的不同</p>
+<blockquote>
+<p>git diff</p>
+</blockquote>
+</li>
+<li><p>把当前某个文件添加到下次提交中</p>
+<blockquote>
+<p>git add.</p>
+</blockquote>
+</li>
+<li><p>指定某个文件的修改添加到下次提交中</p>
+<blockquote>
+<p>git add -p <file></file></p>
+</blockquote>
+</li>
+<li><p>提交本地的所有修改</p>
+<blockquote>
+<p>git commit -a</p>
+</blockquote>
+</li>
+<li><p>提交之前已标记的变化</p>
+<blockquote>
+<p>git commit</p>
+</blockquote>
+</li>
+<li><p>修改上次提交（请勿修改已发布的提交记录）</p>
+<blockquote>
+<p>git commit –amend</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="提交历史"><a href="#提交历史" class="headerlink" title="提交历史"></a>提交历史</h1><ul>
+<li><p>从最新提交开始显示所有的提交记录</p>
+<blockquote>
+<p>git log</p>
+</blockquote>
+</li>
+<li><p>显示指定文件的所有修改</p>
+<blockquote>
+<p>git log -p <file></file></p>
+</blockquote>
+</li>
+<li><p>谁，在什么时候修改了文件的什么内容</p>
+<blockquote>
+<p>git blame <file></file></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h1><ul>
+<li><p>显示所有分支</p>
+<blockquote>
+<p>git branch -av</p>
+</blockquote>
+</li>
+<li><p>切换当前分支</p>
+<blockquote>
+<p>git checkout <branch></branch></p>
+</blockquote>
+</li>
+<li><p>创建新分支（基于当前分支）</p>
+<blockquote>
+<p>git branch <new-branch></new-branch></p>
+</blockquote>
+</li>
+<li><p>创建新分支（基于远程分支）</p>
+<blockquote>
+<p>git checkout –track &lt;remote/branch&gt;</p>
+</blockquote>
+</li>
+<li><p>删除本地分支</p>
+<blockquote>
+<p>git branch -d <branch></branch></p>
+</blockquote>
+</li>
+<li><p>给当前分支打标签</p>
+<blockquote>
+<p>git tag <tag-name></tag-name></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="更新与发布"><a href="#更新与发布" class="headerlink" title="更新与发布"></a>更新与发布</h1><ul>
+<li><p>列出当前配置的远程端</p>
+<blockquote>
+<p>git remote -v</p>
+</blockquote>
+</li>
+<li><p>显示远程端信息</p>
+<blockquote>
+<p>git remote show <remote></remote></p>
+</blockquote>
+</li>
+<li><p>添加新的远程端</p>
+<blockquote>
+<p>git remote add <shortname> <url></url></shortname></p>
+</blockquote>
+</li>
+<li><p>下载远程端所有改动到本地（不会自动合并到当前）</p>
+<blockquote>
+<p>git fetch <remote></remote></p>
+</blockquote>
+</li>
+<li><p>下载远程端所有改动到本地（自动合并到当前）</p>
+<blockquote>
+<p>git pull <remote> <branch></branch></remote></p>
+</blockquote>
+</li>
+<li><p>将本地版本发布到远程端</p>
+<blockquote>
+<p>git push <remote> <branch></branch></remote></p>
+</blockquote>
+</li>
+<li><p>删除远程端分支</p>
+<blockquote>
+<p>git branch -dr &lt;remote/branch&gt;</p>
+</blockquote>
+</li>
+<li><p>发布标签</p>
+<blockquote>
+<p>git push –tags</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="合并和重置"><a href="#合并和重置" class="headerlink" title="合并和重置"></a>合并和重置</h1><ul>
+<li><p>将分支合并到当前</p>
+<blockquote>
+<p>git merge <branch></branch></p>
+</blockquote>
+</li>
+<li><p>将当前版本重置到当前分支（请勿重置已发布的提交）</p>
+<blockquote>
+<p>git rebase <branch></branch></p>
+</blockquote>
+</li>
+<li><p>退出重置</p>
+<blockquote>
+<p>git rebase –abort</p>
+</blockquote>
+</li>
+<li><p>解决冲突后继续重置</p>
+<blockquote>
+<p>git rebase –continue</p>
+</blockquote>
+</li>
+<li><p>使用配置好的合并工具去解决冲突<br>git mergetool</p>
+</li>
+<li><p>在编辑器中手动解决冲突后，标记文件为已解决冲突</p>
+<blockquote>
+<p>git add <resolved-file><br>git rm <resolved-file></resolved-file></resolved-file></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h1><ul>
+<li><p>放弃工作目录下所有修改稿</p>
+<blockquote>
+<p>git reset –hard HEAD</p>
+</blockquote>
+</li>
+<li><p>放弃某个文件的所有本地修改</p>
+<blockquote>
+<p>git checkout HEAD <file></file></p>
+</blockquote>
+</li>
+<li><p>重置一个提交（通过创建一个截然不同的新提交）</p>
+<blockquote>
+<p>git revert <commit></commit></p>
+</blockquote>
+</li>
+<li><p>将HEAD重置到上一次提交的版本并抛弃改版本之后的所有修改</p>
+<blockquote>
+<p>git reset  –head <commit></commit></p>
+</blockquote>
+</li>
+<li><p>将HEAD重置到上一次提交的版本并将之后修改为未添加到缓存区的修改</p>
+<blockquote>
+<p>git reset <commit></commit></p>
+</blockquote>
+</li>
+<li><p>将HEAD重置到上一次提交的版本并保留未提交的本地修改</p>
+<blockquote>
+<p>git reset –keep <commit></commit></p>
+</blockquote>
+</li>
+</ul>
+<p><a href="http://junhey.com/usr/uploads/2016/02/1092438996.pdf">git-cheatsheet.pdf</a><br><a href="http://junhey.com/usr/uploads/2016/02/1232664522.pdf">git-cheatsheet-CN-dark.pdf</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      junhey
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://junhey.com/2016/01/31/2016-02-01-07-48.html" title="git指令速查文档（纯手工打造）">http://junhey.com/2016/01/31/2016-02-01-07-48.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/31/2016-01-31-15-24.html" rel="next" title="Linux(CentOS)nodejs项目部署">
+                <i class="fa fa-chevron-left"></i> Linux(CentOS)nodejs项目部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/03/2016-02-03-11-59.html" rel="prev" title="深入理解ANGULAR中的$APPLY()以及$DIGEST()">
+                深入理解ANGULAR中的$APPLY()以及$DIGEST() <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars1.githubusercontent.com/u/8244100?v=3&s=104" alt="junhey">
+          <p class="site-author-name" itemprop="name">junhey</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git基本常用命令如下："><span class="nav-number">1.</span> <span class="nav-text">Git基本常用命令如下：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建"><span class="nav-number">2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地修改"><span class="nav-number">3.</span> <span class="nav-text">本地修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交历史"><span class="nav-number">4.</span> <span class="nav-text">提交历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支与标签"><span class="nav-number">5.</span> <span class="nav-text">分支与标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新与发布"><span class="nav-number">6.</span> <span class="nav-text">更新与发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并和重置"><span class="nav-number">7.</span> <span class="nav-text">合并和重置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#撤销"><span class="nav-number">8.</span> <span class="nav-text">撤销</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">junhey</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: cf6b9d24c19940373855c2ccb6fbfb162aea4f430942f099fd757e9f73631f81,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
