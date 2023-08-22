@@ -29,22 +29,24 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          npm install hexo-cli -g
           npm install
         working-directory: ./blog
       
-      - name: Look Path
-        run: pwd
+      - name: Clear Publish Directory
+        run: rm -rf public/*
+        working-directory: ./blog
 
       - name: Build
         run: |
-          npm run build
+          hexo clean && hexo generate
         working-directory: ./blog
 
       - name: Copy File
         run: |
-          rsync -r ./README.md ./blog/public/README.md
-          rsync -r ./love ./blog/public/love
-          rsync -r ./project ./blog/public/project
+          cp -r ./README.md ./blog/public/README.md
+          cp -r ./love ./blog/public/love
+          cp -r ./project ./blog/public/project
         working-directory: ./
 
       - name: Deploy to GitHub Pages
