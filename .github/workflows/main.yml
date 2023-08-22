@@ -48,13 +48,6 @@ jobs:
           cp -r ./love ./blog/public/love
           cp -r ./project ./blog/public/project
         working-directory: ./
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./blog/public
-          publish_branch: gh-pages
           
       - name: Deploy to docs Branch
         uses: peaceiris/actions-gh-pages@v3
