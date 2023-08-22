@@ -31,8 +31,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd ./blog
           npm install
+        working-directory: ./blog
       
       - name: Look Path
         run: pwd
@@ -40,14 +40,15 @@ jobs:
       - name: Build
         run: |
           npm build
-          # cp -f ../README.md ./public/README.md
-          # cp -f ../CNAME ./public/CNAME
-          # cp -r ../love ./public/love
-          # cp -r ../project ./public/project
+          # rsync -f ../README.md ./public/README.md
+          # rsync -f ../CNAME ./public/CNAME
+          # rsync -r ../love ./public/love
+          # rsync -r ../project ./public/project
+        working-directory: ./blog
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./blog/public
           publish_branch: gh-pages
