@@ -39,7 +39,7 @@ jobs:
 
       - name: Build
         run: |
-          npm build
+          npm run build
           # rsync -f ../README.md ./public/README.md
           # rsync -f ../CNAME ./public/CNAME
           # rsync -r ../love ./public/love
